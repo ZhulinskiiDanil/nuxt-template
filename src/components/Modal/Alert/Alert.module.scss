@@ -1,0 +1,32 @@
+.modal {
+  padding: 1.5rem;
+  min-width: 300px;
+
+  .body {
+    margin-top: 1.7rem;
+    text-align: center;
+    font-size: 1.375rem;
+    font-weight: 300;
+    line-height: 1.4375rem;
+    /* 104.545% */
+    letter-spacing: 0.00625rem;
+
+    [data-type~=red] {
+      color: #FF6D6D;
+    }
+
+    [data-type~=bold] {
+      font-weight: 700;
+    }
+  }
+
+  .buttons {
+    margin-top: 1rem;
+    display: flex;
+    gap: .5rem;
+
+    .link {
+      width: 100%;
+    }
+  }
+}

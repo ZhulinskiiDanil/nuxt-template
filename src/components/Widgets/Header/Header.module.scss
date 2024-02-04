@@ -1,0 +1,23 @@
+header.header {
+  z-index: 1;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  height: 70px;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0 $contentPaddingX;
+  user-select: none;
+  background: #181818;
+
+  .cw {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: $cw;
+    margin: 0 auto;
+    gap: 1rem;
+  }
+}

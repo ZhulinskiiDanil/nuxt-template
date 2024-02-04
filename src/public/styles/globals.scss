@@ -1,0 +1,47 @@
+@import url('./_fonts.scss');
+
+* {
+  margin: 0;
+  padding: 0;
+  min-width: 0;
+  min-height: 0;
+  box-sizing: border-box;
+  font-family: 'Golos UI', sans-serif;
+  scroll-behavior: smooth;
+  list-style-type: none;
+
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      // background: #aaa;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    height: $scrollWidth;
+    width: $scrollWidth;
+    background: #1e1e1e;
+  }
+  
+  &::-webkit-scrollbar-thumb {
+    background: #555;
+    // border-radius: 999rem;
+    // transition: .15s ease;
+  }
+}
+
+body,
+html {
+  background: rgb($bgColor);
+  color: #fff;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+label,
+input,
+button {
+  color: inherit;
+}

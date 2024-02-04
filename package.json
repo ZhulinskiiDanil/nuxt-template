@@ -1,0 +1,32 @@
+{
+  "name": "nuxt-app",
+  "private": true,
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxtjs/i18n": "^8.0.0-rc.11",
+    "@types/gsap": "^3.0.0",
+    "@types/node": "^18.19.14",
+    "@types/validator": "^13.11.8",
+    "nuxt": "^3.10.0",
+    "sass": "^1.64.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "@vuelidate/core": "^2.0.3",
+    "@vuelidate/validators": "^2.0.4",
+    "gsap": "^3.12.3",
+    "maska": "^2.1.11",
+    "nuxi": "^3.6.5",
+    "typecheck": "^0.1.2",
+    "validator": "^13.11.0"
+  }
+}

@@ -1,0 +1,39 @@
+button.button.black {
+  &.dark,
+  &.light {
+    $color: $buttonBlackText;
+    
+    color: $color;
+    background: $buttonBlackBg;
+
+    .icon [stroke]:not([stroke~=none]) { stroke: $color; }
+    .icon [fill]:not([fill~=none]) { fill: $color; }
+
+    &:has(svg) { background: $buttonBlackBg; }
+
+    &:hover,
+    &.hovered { background: $buttonBlackBgHover; }
+
+    &:focus,
+    &.focused { background: $buttonBlackBgHover; }
+
+    &:active,
+    &.pressed { background: $buttonBlackBgHover; }
+  }
+  
+  &:disabled,
+  &.disabled,
+  &[data-disabled] {
+    border: none;
+
+    &.dark,
+    &.light {
+      $color: $buttonGrayDisabledText;
+
+      color: $color;
+  
+      .icon [stroke]:not([stroke~=none]) { stroke: $color; }
+      .icon [fill]:not([fill~=none]) { fill: $color; }
+    }
+  }
+}

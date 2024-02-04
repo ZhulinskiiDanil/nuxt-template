@@ -1,0 +1,50 @@
+.select.default {
+  &.active,
+  &:hover {
+    background: $selectDefaultListBg;
+  }
+
+  &:hover,
+  &.active {
+    .selected {
+      $color: $selectDefaultSelectedTextHover;
+
+      color: $color;
+
+      .arrow {
+        [fill]:not([fill~=none]) { fill: $color; }
+        [stroke]:not([stroke~=none]) { stroke: $color; }
+      }
+    }
+  }
+
+  .selected {
+    $color: $selectDefaultSelectedText;
+
+    color: $color;
+    background: $selectDefaultSelectedBg;
+
+    .arrow {
+      color: $color;
+
+      [fill]:not([fill~=none]) { fill: $color; }
+      [stroke]:not([stroke~=none]) { stroke: $color; }
+    }
+  }
+
+  .list {
+    background: $selectDefaultListBg;
+
+    .option {
+      color: $selectDefaultOptionText;
+
+      &:hover {
+        color: $selectDefaultOptionTextHover;
+      }
+
+      &.active {
+        color: $selectDefaultOptionTextActive;
+      }
+    }
+  }
+}

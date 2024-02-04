@@ -1,0 +1,47 @@
+button.button.white {
+  &.dark,
+  &.light {
+    $color: $buttonWhiteText;
+    
+    color: $color;
+    background: $buttonWhiteBg;
+
+    .icon [stroke]:not([stroke~=none]) { stroke: $color; }
+    .icon [fill]:not([fill~=none]) { fill: $color; }
+
+    &:has(svg) { background: $buttonWhiteBg; }
+
+    &:hover,
+    &.hovered { background: $buttonWhiteBgHover; }
+
+    &:focus,
+    &.focused { background: $buttonWhiteBgHover; }
+
+    &:active,
+    &.pressed { background: $buttonWhiteBgHover; }
+  }
+  
+  // &:disabled,
+  // &.disabled,
+  // &[data-disabled] {
+  //   border: none;
+
+  //   &.dark {
+  //     $color: $buttonTextDisabledDark;
+  
+  //     color: $color;
+  
+  //     .icon [stroke]:not([stroke~=none]) { stroke: $color; }
+  //     .icon [fill]:not([fill~=none]) { fill: $color; }
+  //   }
+
+  //   &.light {
+  //     $color: $buttonTextDisabledLight;
+  
+  //     color: $color;
+  
+  //     .icon [stroke]:not([stroke~=none]) { stroke: $color; }
+  //     .icon [fill]:not([fill~=none]) { fill: $color; }
+  //   }
+  // }
+}

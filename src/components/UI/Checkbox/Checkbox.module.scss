@@ -1,0 +1,82 @@
+@import './scss/Checkbox.default.scss';
+
+label.checkbox {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: .1s ease;
+  
+  cursor: pointer;
+  
+  .text {
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 120%; /* 1.2rem */
+    letter-spacing: 0.02rem;
+    transition: inherit;
+  }
+  
+  &:has(input:checked) {
+    .text {
+      color: #999;
+    }
+
+    .input {
+      background: #4b4b4b;
+      border-color: #999;
+  
+      &::after {
+        transform: scale(1);
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
+
+  .input {
+    flex-shrink: 0;
+    
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 1.25rem;
+    height: 1.25rem;
+  
+    border: 2px solid #6C6C7A;
+    border-radius: 5px;
+    background: #2B2B31;
+    transition: inherit;
+  
+    &:hover {
+      background: #37373E;
+    }
+  
+    &::after {
+      content: '';
+      display: block;
+      width: 6px;
+      height: 6px;
+      transform: scale(0);
+      background: #ddd;
+      border-radius: 50%;
+      visibility: hidden;
+      opacity: 0;
+      transition: inherit;
+    }
+  
+    input {
+      position: absolute;
+      visibility: hidden;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .text {
+      font-size: .875rem;
+    }
+  }
+}

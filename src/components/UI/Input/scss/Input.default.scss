@@ -1,0 +1,45 @@
+label.label.default {
+  $bg: $inputDefaultBg;
+  $color: $inputDefaultText;
+  $placehodler: $inputDefaultPlaceholder;
+  $bgHover: $inputDefaultBgHover;
+  $colorHover: $inputDefaultTextHover;
+  $placehodlerHover: $inputDefaultPlaceholderHover;
+
+  background: $bg;
+  color: $color;
+
+  &.wrong {
+    box-shadow: inset 0 0 1px 1px $inputDefaultStrokeColorWrong;
+  }
+
+  &:hover,
+  &:has(input:focus) {
+    background: $bgHover;
+    color: $colorHover;
+
+    input {
+      &::placeholder {
+        color: $placehodlerHover;
+      }
+  
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bgHover inset;
+        -webkit-text-fill-color: $colorHover;
+      }
+    }
+  }
+
+  input {
+    color: inherit;
+
+    &::placeholder {
+      color: $placehodler;
+    }
+
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px $bg inset;
+      -webkit-text-fill-color: $color;
+    }
+  }
+}

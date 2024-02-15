@@ -1,0 +1,30 @@
+button.button.primary {
+  &.dark,
+  &.light {
+    color: $buttonPrimaryText;
+    background: $buttonPrimaryBg;
+
+    &:has(svg) { background: $buttonPrimaryBg; }
+
+    &:hover,
+    &.hovered { background: $buttonPrimaryBgHover; }
+
+    &:focus,
+    &.focused { background: $buttonPrimaryBgFocus; }
+
+    &:active,
+    &.pressed { background: $buttonPrimaryBgPressed; }
+  }
+  
+  &:disabled,
+  &.disabled,
+  &[data-disabled] {
+    border: none;
+
+    &.dark,
+    &.light {
+      color: $buttonPrimaryTextDisabled;
+      background: $buttonPrimaryBgDisabled;
+    }
+  }
+}

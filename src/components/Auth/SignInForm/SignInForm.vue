@@ -1,69 +1,75 @@
 <template>
   <AuthFormWrapper
     @submit="submit"
-    submitTitle="Нажми на меня"
-    :submitDisabled="(
+    submitTitle="Войти"
+    :disabled="(
       !v$.login.$model
         || !v$.password.$model
         || loading
     )"
   >
-    <UIInputWrapper title="Логин">
+    <UIInputWrapper>
       <UIInput
         placeholder="Введите логин"
         v-model="v$.login.$model"
+        :error="login.error || v$.login.$errors[0]?.$message"
       />
     </UIInputWrapper>
-    <UIInputWrapper title="Пароль">
+    <UIInputWrapper
+      :link="{
+        name: 'Забыл пароль',
+        href: localePath('/auth/password-recovery')
+      }"
+    >
       <UIInput
         type="password"
         placeholder="Введите пароль"
         v-model="v$.password.$model"
+        :error="password.error || v$.password.$errors[0]?.$message"
       />
     </UIInputWrapper>
   </AuthFormWrapper>
 </template>
 
 <script setup lang="ts">
+  import { AuthErrors } from '@/ts/errors/auth';
   import { useVuelidate } from '@vuelidate/core'
   import { helpers, required } from '@vuelidate/validators'
 
-  const { Api } = useApi()
+  const getLocaleError = useGetLocaleError()
 
   const emit = defineEmits<{
     error: [error: string | null]
   }>()
 
-  // const { t } = useI18n()
-  // const { loadProfile } = useProfile()
-  // const localePath = useLocalePath()
+  const { t } = useI18n()
+  const { loadProfile } = useProfile()
+  const localePath = useLocalePath()
   
   const loading = ref(false)
-  const error = ref<string | null>(null)
-  const data = reactive({
-    login: { value: "", error: null },
-    password: { value: "", error: null }
+  const login = reactive({
+    value: '', error: null as string | null
+  })
+  const password = reactive({
+    value: '', error: null as string | null
   })
 
   const rules = computed(() => ({
     login: {
-      minLength: helpers.withMessage('Обязательное поле', required)
+      required: helpers.withMessage('Обязательное поле', required)
     },
     password: {
-      minLength: helpers.withMessage('Обязательное поле', required)
+      required: helpers.withMessage('Обязательное поле', required)
     }
   }))
   const v$ = useVuelidate(rules, {
-    login: toRef(data.login.value),
-    password: toRef(data.password.value)
+    login: toRef(login, 'value'),
+    password: toRef(password, 'value')
   })
 
   async function submit() {
-    // restoreErrors()
-    // const { login, password } = data
-
     // loading.value = true
-    // const response = await Api.auth.signIn({
+    // const response = await $api.auth.signIn({
     //   login: login.value,
     //   password: password.value
     // })
@@ -73,10 +79,10 @@
     // if (response?.code) {
     //   switch (response.code) {
     //     case 'INVALID_CREDENTIALS':
-    //       const error = getError(AuthErrors.INVALID_CREDENTIALS)
+    //       const error = getLocaleError('auth', AuthErrors.INVALID_CREDENTIALS)
 
-    //       data.login.error = error
-    //       data.password.error = error
+    //       login.error = error
+    //       password.error = error
     //       emit('error', `${t('main.error')}. ${error}`)
     //       break;
     //   }

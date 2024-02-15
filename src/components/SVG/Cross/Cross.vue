@@ -1,10 +1,6 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <path
-      d="M18.14 19.56L11.78 13.19L5.42 19.56L4 18.14L10.37 11.78L4 5.42L5.42 4L11.78 10.37L18.14 4.01L19.55 5.42L13.19 11.78L19.55 18.14L18.14 19.56Z"
-      fill="black" />
+  <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M7.5 8L16.5 17M16.5 8L7.5 17L16.5 8Z" stroke="#8D97A6" stroke-width="2" stroke-linecap="round"
+      stroke-linejoin="round" />
   </svg>
 </template>
-
-<script setup lang="ts"></script>
-<style lang="scss" module></style>

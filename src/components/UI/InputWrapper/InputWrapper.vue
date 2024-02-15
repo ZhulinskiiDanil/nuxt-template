@@ -1,6 +1,6 @@
 <template>
   <div :class="[$style.input, $style[theme]]">
-    <p :class="$style.title">
+    <p v-if="title || additional" :class="$style.title">
       <span data-main>
         {{ title }}
       </span>
@@ -8,14 +8,20 @@
         {{ additional }}
       </span>
     </p>
-    <slot></slot>
+    <div :class="$style.input">
+      <slot></slot>
+    </div>
     <div v-if="error" :class="$style.error">
       {{ error }}
     </div>
     <div v-if="description" :class="$style.description">
       {{ description }}
     </div>
-    <NuxtLink :class="$style.link" v-if="link" :to="localePath(link.href)">
+    <NuxtLink
+      v-if="link"
+      :class="$style.link"
+      :to="localePath(link.href)"
+    >
       {{ link.name }}
     </NuxtLink>
   </div>

@@ -1,0 +1,73 @@
+button.button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: .75rem;
+
+  border: none;
+  outline: none;
+  padding: 1rem 1.5rem;
+
+  color: #8d97a6;
+  background: #1c2026;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 110%;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+
+  border-radius: 0.75rem;
+  transition: .15s ease;
+  cursor: pointer;
+
+  &:hover {
+    color: #fff;
+    background: #171b21;
+  }
+
+  &:focus {
+    color: #fff;
+    background: #171b21;
+  }
+
+  &:active {
+    color: #fff;
+    background: #262a30;
+  }
+
+  &.active {
+    color: #fff;
+    background: #20242a;
+  }
+
+  &:disabled {
+    color: #586271;
+    background: #1c2026;
+    cursor: default;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    width: 1.375rem;
+    height: 1.375rem;
+    color: currentColor;
+
+    &:not(:has(svg)) {
+      display: none;
+    }
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    * { color: currentColor; }
+    [fill]:not([fill~=none]) { fill: currentColor }
+    [stroke]:not([stroke~=none]) { stroke: currentColor }
+  }
+
+  &.fill {
+    width: 100%;
+  }
+}

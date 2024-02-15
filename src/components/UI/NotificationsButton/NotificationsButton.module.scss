@@ -1,0 +1,68 @@
+.notifications {
+  flex-shrink: 0;
+  border: none;
+  outline: none;
+  
+  width: 3rem;
+  height: 3rem;
+  padding: 0.62rem;
+
+  border-radius: 1rem;
+  background: #1c2026;
+  cursor: pointer;
+
+  &:hover {
+    background: #23272d;
+
+    .iconWrapper {
+      color: #fff;
+    }
+  }
+
+  &:active {
+    background: #282d35;
+    
+    .iconWrapper {
+      color: #fff;
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+    background: #1c2026;
+    
+    .iconWrapper {
+      color: #586271;
+    }
+  }
+
+  .iconWrapper {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #8D97A6;
+    transition: .15s ease;
+
+    .icon {
+      width: 1.75rem;
+      height: 1.75rem;
+
+      * { color: currentColor; }
+      [fill]:not([fill~=none]) { fill: currentColor }
+      [stroke]:not([stroke~=none]) { stroke: currentColor }
+    }
+
+    .ellipse {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: .75rem;
+      height: .75rem;
+
+      border-radius: 50%;
+      background: #ff1469;
+      border: 2px solid #1c2026; 
+    }
+  }
+}

@@ -1,0 +1,54 @@
+.coins {
+  z-index: 0;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  
+  position: relative;
+  border-radius: 999rem;
+  padding: .25rem .5rem;
+  background: #282d35;
+  background-image: linear-gradient(
+    329deg, transparent, rgba(255, 20, 106, 0.55)
+  );
+
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    border: 1px solid transparent;
+    background: linear-gradient(
+      to bottom, #FF1469, #20242A
+    ) border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .amount {
+    color: #fff;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 130%;
+    text-align: center;
+  }
+
+  .icon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

@@ -1,1 +1,1 @@
-export type ButtonType = "white" | "black" | "gray" | "stroked" | "transparent"
+export type ButtonVariant = "primary" | "safe" | "secondary" | "tertiary" | "custom"

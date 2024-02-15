@@ -1,0 +1,64 @@
+.profile {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+  
+  color: #8d97a6;
+  border-radius: 1rem;
+  background: #262a30;
+  transition: .15s ease;
+
+  @media (max-width: 768px) {
+    .avatar {
+      width: 2rem;
+      height: 2rem;
+    }
+
+    .username {
+      font-size: 1rem;
+    }
+
+    .icon {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+
+  .avatar {
+    flex-shrink: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: #383c44;
+  }
+
+  .username {
+    color: currentColor;
+    font-size: 1.25rem;
+    font-weight: 600;
+    transition: inherit;
+    max-width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  .icon {
+    flex-shrink: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    color: currentColor;
+    margin-left: auto;
+    transition: inherit;
+    cursor: pointer;
+
+    * {
+      color: currentColor;
+      transition: inherit;
+    }
+
+    [fill]:not([fill~=none]) { fill: currentColor }
+    [stroke]:not([stroke~=none]) { stroke: currentColor }
+  }
+}

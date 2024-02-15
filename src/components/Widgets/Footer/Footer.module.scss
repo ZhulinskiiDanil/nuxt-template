@@ -7,7 +7,7 @@ footer.footer {
   .cw {
     max-width: 1660px;
     margin: 0 auto;
-    padding: 4rem $contentPaddingX;
+    padding: 4rem 1rem;
     box-sizing: content-box;
   }
 
@@ -112,7 +112,7 @@ footer.footer {
 
   @media (max-width: 1300px) {
     .cw {
-      padding: 2rem $contentPaddingX;
+      padding: 2rem 1rem;
     }
 
     .flex {

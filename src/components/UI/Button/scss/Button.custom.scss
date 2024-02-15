@@ -1,0 +1,30 @@
+button.button.custom {
+  &.dark,
+  &.light {
+    color: $buttonCustomText;
+    background: $buttonCustomBg;
+
+    &:has(svg) { background: $buttonCustomBg; }
+
+    &:hover,
+    &.hovered { background: $buttonCustomBgHover; }
+
+    &:focus,
+    &.focused { background: $buttonCustomBgFocus; }
+
+    &:active,
+    &.pressed { background: $buttonCustomBgPressed; }
+  }
+  
+  &:disabled,
+  &.disabled,
+  &[data-disabled] {
+    border: none;
+
+    &.dark,
+    &.light {
+      color: $buttonCustomTextDisabled;
+      background: $buttonCustomBgDisabled;
+    }
+  }
+}

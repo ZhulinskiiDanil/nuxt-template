@@ -1,0 +1,112 @@
+// Clear width
+$cw: 1408px;
+$one: calc(1vh + 5vw);
+$scrollWidth: .8rem;
+
+$bgColor: #1C2026;
+$main: #FF1469;
+$main2: #ff146940;
+$gray2: #383C44;
+$gray3: #474C55;
+
+// ! Name rules: nameTypeEntitieState
+
+$buttonPrimaryBg: #ff1469; // !
+$buttonPrimaryText: #ffffff;
+$buttonPrimaryBgHover: #ff1469cc; // ! Variant Hover
+$buttonPrimaryTextHover: #ffffff;
+$buttonPrimaryBgFocus: #ff1469cc; // ! Vairnat Focus
+$buttonPrimaryTextFocus: #ffffff;
+$buttonPrimaryBgPressed: #ff146980; // ! Variant Pressed
+$buttonPrimaryTextPressed: #ffffff;
+$buttonPrimaryBgDisabled: #22272d; // ! Variant Disabled
+$buttonPrimaryTextDisabled: #586271;
+
+$buttonSecondaryBg: #383c44; // !
+$buttonSecondaryText: #ffffff;
+$buttonSecondaryBgHover: #383c44cc; // ! Variant Hover
+$buttonSecondaryTextHover: #ffffff;
+$buttonSecondaryBgFocus: #383c44cc; // ! Vairnat Focus
+$buttonSecondaryTextFocus: #ffffff;
+$buttonSecondaryBgPressed: #383c4480; // ! Variant Pressed
+$buttonSecondaryTextPressed: #ffffff;
+$buttonSecondaryBgDisabled: #22272d; // ! Variant Disabled
+$buttonSecondaryTextDisabled: #586271;
+
+$buttonSafeBg: #15c188; // !
+$buttonSafeText: #ffffff;
+$buttonSafeBgHover: #15c188cc; // ! Variant Hover
+$buttonSafeTextHover: #030303;
+$buttonSafeBgFocus: #15c188cc; // ! Vairnat Focus
+$buttonSafeTextFocus: #020202;
+$buttonSafeBgPressed: #15c18880; // ! Variant Pressed
+$buttonSafeTextPressed: #ffffff;
+$buttonSafeBgDisabled: #22272d; // ! Variant Disabled
+$buttonSafeTextDisabled: #586271;
+
+$buttonTertiaryBg: #282d35; // !
+$buttonTertiaryText: #ffffff;
+$buttonTertiaryBgHover: #282d35cc; // ! Variant Hover
+$buttonTertiaryTextHover: #ffffff;
+$buttonTertiaryBgFocus: #282d35cc; // ! Vairnat Focus
+$buttonTertiaryTextFocus: #ffffff;
+$buttonTertiaryBgPressed: #282d3580; // ! Variant Pressed
+$buttonTertiaryTextPressed: #ffffff;
+$buttonTertiaryBgDisabled: #24292f; // ! Variant Disabled
+$buttonTertiaryTextDisabled: #586271;
+
+$buttonCustomBg: #27a7e7; // !
+$buttonCustomText: #ffffff;
+$buttonCustomBgHover: #14c7ffcc; // ! Variant Hover
+$buttonCustomTextHover: #ffffff;
+$buttonCustomBgFocus: #14c7ffcc; // ! Vairnat Focus
+$buttonCustomTextFocus: #ffffff;
+$buttonCustomBgPressed: #14c7ff80; // ! Variant Pressed
+$buttonCustomTextPressed: #ffffff;
+$buttonCustomBgDisabled: #22272d; // ! Variant Disabled
+$buttonCustomTextDisabled: #586271;
+
+$inputDefaultBg: #1c2026;  // !
+$inputDefaultText: #ffffff;
+$inputDefaultPlaceholder: #8d97a6;
+$inputDefaultBorderColor: #ffffff08;
+$inputDefaultIconColor: #8D97A6;
+$inputDefaultBgHover: #171b21; // ! Variant Hover
+$inputDefaultTextHover: #ffffff;
+$inputDefaultPlaceholderHover: #8d97a6;
+$inputDefaultBorderColorHover: #ffffff08;
+$inputDefaultIconColorHover: #8D97A6;
+$inputDefaultBgPressed: #262a30; // ! Variant Pressed
+$inputDefaultTextPressed: #ffffff;
+$inputDefaultPlaceholderPressed: #8d97a6;
+$inputDefaultBorderColorPressed: #ffffff08;
+$inputDefaultIconColorPressed: #8D97A6;
+$inputDefaultBgFocus: #1c2026; // ! Vairnat Focus
+$inputDefaultTextFocus: #ffffff;
+$inputDefaultPlaceholderFocus: #8d97a6;
+$inputDefaultBorderColorFocus: #ffffff08;
+$inputDefaultIconColorFocus: #8D97A6;
+$inputDefaultBgDone: #1c2026; // ! Variant Done
+$inputDefaultTextDone: #ffffff;
+$inputDefaultPlaceholderDone: #8d97a6;
+$inputDefaultBorderColorDone: #ffffff08;
+$inputDefaultIconColorDone: #8D97A6;
+$inputDefaultBgWrong: #1c2026; // ! Variant Wrong
+$inputDefaultTextWrong: #ffffff;
+$inputDefaultPlaceholderWrong: #8d97a6;
+$inputDefaultBorderColorWrong: #f34f34;
+$inputDefaultIconColorWrong: #8D97A6;
+$inputDefaultBgDisabled: #252a30; // ! Variant Disabled
+$inputDefaultTextDisabled: #586271;
+$inputDefaultPlaceholderDisabled: #586271;
+$inputDefaultBorderColorDisabled: #ffffff08;
+$inputDefaultIconColorDisabled: #586271;
+$inputDefaultErrorTextColor: #f34f34; // ! Specific
+
+$selectDefaultSelectedBg: rgb(20, 20, 20);
+$selectDefaultSelectedText: rgb(108, 108, 122);
+$selectDefaultSelectedTextHover: rgb(255, 255, 255);
+$selectDefaultListBg: rgb(31, 31, 31);
+$selectDefaultOptionText: rgb(122, 122, 122);
+$selectDefaultOptionTextHover: rgb(178, 182, 255);
+$selectDefaultOptionTextActive: rgb(178, 182, 255)

@@ -1,0 +1,28 @@
+.additionals {
+  display: flex;
+  flex-direction: column;
+  margin-top: .5rem;
+  gap: .75rem;
+
+  .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 110%;
+    color: #8d97a6;
+    
+    &__link,
+    &__fn {
+      margin-left: 0.38rem;
+      transition: .15s ease;
+      cursor: pointer;
+      
+      &:hover {
+        opacity: .8;
+      }
+    }
+  }
+}

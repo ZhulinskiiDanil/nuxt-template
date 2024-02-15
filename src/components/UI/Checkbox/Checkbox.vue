@@ -8,9 +8,11 @@
   >
     <div :class="$style.input">
       <input
-        v-model="model"
         type="checkbox"
+        :disabled="disabled"
+        v-model="model"
       />
+      <SVGStar :class="$style.icon" />
     </div>
     <span v-if="title" :class="$style.text">
       {{ title }}
@@ -28,6 +30,7 @@
   const props = defineProps<{
     type?: CheckboxType
     theme?: UIKitElementTheme
+    disabled?: boolean
     title?: string
   }>()
   

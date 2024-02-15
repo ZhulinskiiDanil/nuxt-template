@@ -1,45 +1,150 @@
 label.label.default {
   $bg: $inputDefaultBg;
-  $color: $inputDefaultText;
-  $placehodler: $inputDefaultPlaceholder;
   $bgHover: $inputDefaultBgHover;
-  $colorHover: $inputDefaultTextHover;
-  $placehodlerHover: $inputDefaultPlaceholderHover;
+  $bgPressed: $inputDefaultBgPressed;
+  $bgDone: $inputDefaultBgDone;
+  $bgDisabled: $inputDefaultBgDisabled;
+  $bgWrong: $inputDefaultBgWrong;
 
+  display: flex;
+  align-items: center;
+
+  border-color: $inputDefaultBorderColor;
   background: $bg;
-  color: $color;
+  color: $inputDefaultText;
 
-  &.wrong {
-    box-shadow: inset 0 0 1px 1px $inputDefaultStrokeColorWrong;
+  .icon {
+    color: $inputDefaultIconColor;
   }
 
-  &:hover,
-  &:has(input:focus) {
-    background: $bgHover;
-    color: $colorHover;
-
-    input {
-      &::placeholder {
-        color: $placehodlerHover;
-      }
-  
-      &:-webkit-autofill {
-        -webkit-box-shadow: 0 0 0px 1000px $bgHover inset;
-        -webkit-text-fill-color: $colorHover;
-      }
+  .inputContainer {
+    .error {
+      color: $inputDefaultErrorTextColor;
     }
+  }
+
+  .after {
+    color: $inputDefaultPlaceholder;
   }
 
   input {
     color: inherit;
 
     &::placeholder {
-      color: $placehodler;
+      color: $inputDefaultPlaceholder;
     }
 
     &:-webkit-autofill {
       -webkit-box-shadow: 0 0 0px 1000px $bg inset;
-      -webkit-text-fill-color: $color;
+      -webkit-text-fill-color: $inputDefaultText;
+    }
+  }
+
+  &:hover,
+  &:has(input:focus) {
+    border-color: $inputDefaultBorderColorHover;
+    background: $bgHover;
+    color: $inputDefaultTextHover;
+
+    .after {
+      color: $inputDefaultPlaceholderHover;
+    }
+
+    input {
+      &::placeholder {
+        color: $inputDefaultPlaceholderHover;
+      }
+  
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bgHover inset;
+        -webkit-text-fill-color: $inputDefaultTextHover;
+      }
+    }
+  }
+
+  &:active,
+  &:has(input:active) {
+    border-color: $inputDefaultBorderColorPressed;
+    background: $bgPressed;
+    color: $inputDefaultTextPressed;
+
+    .after {
+      color: $inputDefaultPlaceholderPressed;
+    }
+
+    input {
+      &::placeholder {
+        color: $inputDefaultPlaceholderPressed;
+      }
+  
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bgPressed inset;
+        -webkit-text-fill-color: $inputDefaultTextPressed;
+      }
+    }
+  }
+
+  &.done {
+    border-color: $inputDefaultBorderColorDone;
+    background: $bgDone;
+    color: $inputDefaultTextDone;
+
+    .after {
+      color: $inputDefaultPlaceholderDone;
+    }
+
+    input {
+      &::placeholder {
+        color: $inputDefaultPlaceholderDone;
+      }
+  
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bgDone inset;
+        -webkit-text-fill-color: $inputDefaultTextDone;
+      }
+    }
+  }
+
+  &:has(input:disabled, input:read-only) {
+    border-color: $inputDefaultBorderColorDisabled;
+    background: $bgDisabled;
+    color: $inputDefaultTextDisabled;
+
+    .after {
+      color: $inputDefaultPlaceholderDisabled;
+    }
+
+    input {
+      &::placeholder {
+        color: $inputDefaultPlaceholderDisabled;
+      }
+  
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bgWrong inset;
+        -webkit-text-fill-color: $inputDefaultTextDisabled;
+      }
+    }
+  }
+
+  // Priority 20
+  &.wrong.wrong {
+    border-color: $inputDefaultBorderColorWrong;
+    background: $bgWrong;
+    color: $inputDefaultTextWrong;
+
+    .after {
+      color: $inputDefaultPlaceholderWrong;
+    }
+
+    input {
+      &::placeholder {
+        color: $inputDefaultPlaceholderWrong;
+      }
+  
+      &:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $bgWrong inset;
+        -webkit-text-fill-color: $inputDefaultTextWrong;
+      }
     }
   }
 }

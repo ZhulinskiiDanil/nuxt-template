@@ -1,0 +1,157 @@
+.langDtopdown {
+  flex-shrink: 0;
+  position: relative;
+  display: flex;
+  padding: 1px;
+  border-radius: 1rem;
+  width: min-content;
+  line-height: 120%; /* 19.2px */
+  cursor: pointer;
+
+  user-select: none;
+  -webkit-user-drag: none;
+
+  font-size: .8rem;
+
+  &.active {
+    z-index: 1;
+
+    .list {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+
+  &.dropTo {
+    &__top {
+      &.active {
+        .list .arrow {
+          transform: rotate(-180deg);
+        }
+      }
+
+      .list {
+        bottom: 100%;
+        margin-bottom: .5rem;
+
+        .arrow {
+          transform: rotate(0deg);
+        }
+      }
+    }
+
+    &__down {
+      &.active {
+        .list .arrow {
+          transform: rotate(0deg);
+        }
+      }
+
+      .list {
+        top: 100%;
+        margin-top: .5rem;
+
+        .arrow {
+          transform: rotate(-180deg);
+        }
+      }
+    }
+  }
+
+  .selected {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+
+    width: 4rem;
+    height: 2rem;
+    border-radius: 1rem;
+    padding: 0.5rem 0.75rem;
+    background: #282d35;
+    transition: .15s ease;
+
+    &:hover {
+      background: #20242a;
+
+      .arrow {
+        color: #fff;
+      }
+    }
+
+    .locale {
+      width: 1rem;
+      height: 1rem;
+      border-radius: 50%;
+      overflow: hidden;
+      object-fit: cover;
+    }
+
+    .arrow {
+      $size: 1rem;
+
+      width: $size;
+      height: $size;
+      
+      color: #8D97A6;
+      transition: .2s ease;
+      
+      * {
+        transition: inherit;
+        color: currentColor;
+      }
+
+      [fill]:not([fill~=none]) { fill: currentColor }
+      [stroke]:not([stroke~=none]) { stroke: currentColor }
+    }
+  }
+
+  &.isLeft {
+    .list {
+      right: unset;
+      left: 0;
+    }
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+
+    position: absolute;
+    right: 0;
+    
+    max-height: 175px;
+    padding: 0.5rem;
+    overflow: auto;
+    
+    border-radius: 1rem;
+    background: #20242a;
+
+    visibility: hidden;
+    opacity: 0;
+
+    .option {
+      z-index: 1;
+      flex-shrink: 0;
+
+      display: flex;
+      align-items: center;
+      padding: .6rem .75rem;
+      gap: .5rem;
+      
+      color: #fff;
+      font-size: 1rem;
+      font-weight: 500;
+      border-radius: 0.5rem;
+      
+      transition: .15s ease;
+      cursor: pointer;
+
+      user-select: none;
+      -webkit-user-drag: none;
+
+      &:hover {
+        background: #282d35;
+      }
+    }
+  }
+}

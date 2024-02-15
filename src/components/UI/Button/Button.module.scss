@@ -1,8 +1,8 @@
-@import './scss/Button.white.scss';
-@import './scss/Button.black.scss';
-@import './scss/Button.gray.scss';
-@import './scss/Button.stroked.scss';
-@import './scss/Button.transparent.scss';
+@import './scss/Button.safe.scss';
+@import './scss/Button.primary.scss';
+@import './scss/Button.tertiary.scss';
+@import './scss/Button.secondary.scss';
+@import './scss/Button.custom.scss';
 
 button.button {
   display: flex;
@@ -13,13 +13,14 @@ button.button {
   position: relative;
   border: none;
   outline: none;
+  border-radius: 0.75rem;
   padding: 0.75rem 1.5rem;
-
+  
   font-size: 1rem;
   font-weight: 500;
   line-height: 120%;
   letter-spacing: -0.24px;
-  transition: .15s ease;
+  transition: .4s ease;
   cursor: pointer;
 
   user-select: none;
@@ -34,8 +35,16 @@ button.button {
   }
 
   &.mini {
+    border-radius: 0.5rem;
     padding: 0.5rem 0.75rem;
-    font-weight: 400;
+    font-size: 0.88rem;
+    font-weight: 500;
+
+    .icon {
+      $size: 14px;
+      width: $size;
+      height: $size;
+    }
   }
 
   &.uppercase {
@@ -43,9 +52,17 @@ button.button {
   }
 
   .icon {
-    $size: 18px;
+    $size: 19px;
     width: $size;
     height: $size;
+    color: currentColor;
+
+    * {
+      color: currentColor;
+    }
+
+    [stroke]:not([stroke~=none]) { stroke: currentColor; }
+    [fill]:not([fill~=none]) { fill: currentColor; }
 
     svg {
       width: 100%;

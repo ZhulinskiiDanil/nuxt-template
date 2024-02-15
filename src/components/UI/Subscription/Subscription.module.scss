@@ -1,0 +1,115 @@
+.subscription {
+  display: flex;
+  flex-direction: column;
+
+  z-index: 0;
+  position: relative;
+  border-radius: 1rem;
+  height: 18.12rem;
+  padding: 2rem;
+  width: 100%;
+  background: linear-gradient(156deg, rgb(52 59 68 / 26%) 0%, #1c2026 100%);
+
+  &.big {
+    height: 19.44rem;
+  }
+
+  &.active {
+    background:
+      radial-gradient(117.58% 91.32% at 83.5% 129%, rgba(255, 20, 105, .4) 0%, rgba(255, 20, 105, 0) 100%),
+      linear-gradient(156deg, rgb(52 59 68 / 26%) 0%, #1c2026 100%)
+    ;
+    
+    &::after {
+      background: linear-gradient(
+        to bottom, rgb(255, 20, 105), transparent
+      ) border-box;
+    }
+  }
+
+  // Gradient border
+  &::after {
+    content: '';
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate3d(-50%, -50%, 0);
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+
+    border: 1px solid transparent;
+    background: linear-gradient(
+      to bottom, #474C55, transparent
+    ) border-box;
+    -webkit-mask:
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0);
+    mask: 
+      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  .tag {
+    z-index: 1;
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate3d(-50%, -50%, 0);
+    
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.75rem;
+    gap: .625rem;
+    
+    background: #1c2026;
+    border-radius: 999rem;
+    white-space: nowrap;
+
+    user-select: none;
+    -webkit-user-drag: none;
+
+    .icon {
+      width: 1rem;
+      height: 1rem;
+      object-fit: contain;
+    }
+  }
+
+  .title {
+    font-weight: 500;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .price {
+    margin-top: 2rem;
+
+    color: #fff;
+    font-weight: 700;
+    font-stretch: 150%;
+    font-size: 2.25rem;
+    line-height: 92%;
+  }
+
+  .oldPrice {
+    margin-top: .5rem;
+
+    font-weight: 700;
+    font-size: 1.25rem;
+    line-height: 92%;
+    color: #586271;
+    filter: blur(1.5px);
+
+    user-select: none;
+    -webkit-user-drag: none;
+  }
+
+  .button {
+    margin-top: auto;
+  }
+}

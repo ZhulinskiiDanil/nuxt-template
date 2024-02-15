@@ -8,12 +8,13 @@
       hovered && $style.hovered,
       focused && $style.focused,
       pressed && $style.pressed,
-      uppercase && $style.uppercase
+      uppercase && $style.uppercase,
+      mini && $style.mini
     ]"
     :disabled="disabled"
     :data-has-icon="!!$slots.icon"
   >
-    <div :class="$style.icon">
+    <div v-if="$slots.icon" :class="$style.icon">
       <slot name="icon"></slot>
     </div>
     <slot></slot>
@@ -23,23 +24,22 @@
 <script setup lang="ts">
   import { uiConfig } from '../ui.config';
   import type { UIKitElementTheme } from '../types';
-  import type { ButtonType } from './types'
+  import type { ButtonVariant } from './types'
 
   const slots = defineSlots()
   const props = defineProps<{
-    type?: ButtonType
     theme?: UIKitElementTheme
+    variant?: ButtonVariant
     uppercase?: boolean
     disabled?: boolean
     hovered?: boolean
     focused?: boolean
     pressed?: boolean
     fill?: boolean
+    mini?: boolean
   }>()
   
-  const buttonType = computed(() => (
-    props.type || 'white'
-  ))
+  const buttonType = computed(() => props.variant || 'primary')
   const buttonTheme = computed(() => (
     props.theme
     || uiConfig?.getTheme?.().value

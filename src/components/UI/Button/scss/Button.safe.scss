@@ -1,0 +1,30 @@
+button.button.safe {
+  &.dark,
+  &.light {
+    color: $buttonSafeText;
+    background: $buttonSafeBg;
+
+    &:has(svg) { background: $buttonSafeBg; }
+
+    &:hover,
+    &.hovered { background: $buttonSafeBgHover; }
+
+    &:focus,
+    &.focused { background: $buttonSafeBgFocus; }
+
+    &:active,
+    &.pressed { background: $buttonSafeBgPressed; }
+  }
+  
+  &:disabled,
+  &.disabled,
+  &[data-disabled] {
+    border: none;
+
+    &.dark,
+    &.light {
+      color: $buttonSafeTextDisabled;
+      background: $buttonSafeBgDisabled;
+    }
+  }
+}

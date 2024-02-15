@@ -1,0 +1,11 @@
+.tab {
+  display: flex;
+  overflow: hidden;
+  border: 1px solid #1c2026;
+  border-radius: 0.5rem;
+  background: #282d35;
+
+  &.fill {
+    width: 100%;
+  }
+}

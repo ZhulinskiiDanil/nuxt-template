@@ -1,8 +1,4 @@
 .input {
-  display: flex;
-  flex-direction: column;
-  gap: .5rem;
-
   &.light {
     
   }
@@ -28,6 +24,14 @@
     }
   }
 
+  &:has(.title) .input {
+    margin-top: .5rem;
+  }
+
+  .input {
+    width: 100%;
+  }
+
   .error {
     color: rgb(255, 0, 0);
     font-size: 0.875rem;
@@ -37,15 +41,24 @@
   }
 
   .description {
-    opacity: 0.5;
-    font-size: 0.775rem;
-    font-weight: 500;
-    line-height: 1.1rem; /* 142.857% */
-    letter-spacing: 0.00625rem;
+    margin-top: .75rem;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 110%;
+    color: #8d97a6;
   }
 
   .link {
-    color: #FFF;
-    text-decoration-line: underline;
+    display: inline-block;
+    margin-top: .75rem;
+
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 110%;
+    color: #8d97a6;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }

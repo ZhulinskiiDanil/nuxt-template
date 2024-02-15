@@ -1,18 +1,7 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 40 40" fill="none">
-    <mask style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
-      <rect width="40" height="40" fill="#999"/>
-    </mask>
-    <g>
-      <path d="M18.334 21.6666H8.33398V18.3333H18.334V8.33331H21.6673V18.3333H31.6673V21.6666H21.6673V31.6666H18.334V21.6666Z" fill="#000"/>
-    </g>
+  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" clip-rule="evenodd"
+      d="M8 2.75738C8.55228 2.75738 9 3.2051 9 3.75738L9 7.00002L12.2426 7.00002C12.7949 7.00002 13.2426 7.44774 13.2426 8.00002C13.2426 8.55231 12.7949 9.00002 12.2426 9.00002L9 9.00002V12.2427C9 12.7949 8.55228 13.2427 8 13.2427C7.44772 13.2427 7 12.7949 7 12.2427V9.00002L3.75736 9.00002C3.20507 9.00002 2.75736 8.55231 2.75736 8.00002C2.75736 7.44774 3.20507 7.00002 3.75736 7.00002L7 7.00002L7 3.75738C7 3.2051 7.44772 2.75738 8 2.75738Z"
+      fill="#8D97A6" />
   </svg>
 </template>
-
-<script setup lang="ts">
-  
-</script>
-
-<style lang="scss" module>
-
-</style>

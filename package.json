@@ -27,6 +27,7 @@
     "maska": "^2.1.11",
     "nuxi": "^3.6.5",
     "typecheck": "^0.1.2",
-    "validator": "^13.11.0"
+    "validator": "^13.11.0",
+    "vue-composable": "^1.0.0-beta.24"
   }
 }

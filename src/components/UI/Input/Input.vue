@@ -5,35 +5,53 @@
       $style.label,
       $style.default,
       $style[inputTheme],
-      wrong && $style.wrong,
+      (wrong || error) && $style.wrong,
       fill && $style.fill,
       type === 'password' && $style.password
     ]"
   >
-    <input
-      :name="name"
-      :autocomplete="autocomplete"
-      :type="type === 'password'
-        ? (isHidden ? type : 'text')
-        : type || 'text'"
-      :placeholder="placeholder || 'Placeholder'"
+    <div v-if="$slots['before-icon']" :class="$style.icon">
+      <slot name="before-icon"></slot>
+    </div>
+    <div :class="$style.inputContainer">
+      <div :class="[
+        $style.error,
+        error && $style.active
+      ]">
+        {{ error }}
+      </div>
+      <input
+        :name="name"
+        :autocomplete="autocomplete"
+        :type="type === 'password'
+          ? (isHidden ? type : 'text')
+          : type || 'text'"
+        :placeholder="placeholder || 'Placeholder'"
+        :readonly="readonly"
 
-      v-maska
-      v-model="model"
-      :data-maska="dataMask"
-      :data-maska-tokens="dataMaskaTokens"
-      :data-maska-eager="dataMaskaEager"
-    />
-    <SVGClosedEye
+        v-maska
+        v-model="model"
+        :data-maska="dataMask"
+        :data-maska-tokens="dataMaskaTokens"
+        :data-maska-eager="dataMaskaEager"
+      />
+    </div>
+    <SVGEyeClosed
       v-if="isHidden && isPassword"
       @click="toggleEye"
-      :class="$style.icon"
+      :class="[$style.icon, $style.eye]"
     />
     <SVGEye
       v-else-if="isPassword"
       @click="toggleEye"
-      :class="$style.icon"
+      :class="[$style.icon, $style.eye]"
     />
+    <div v-if="after" :class="$style.after">
+      {{ after }}
+    </div>
+    <div v-if="$slots['after-icon']" :class="$style.icon">
+      <slot name="after-icon"></slot>
+    </div>
   </label>
 </template>
 
@@ -48,6 +66,8 @@
     fill?: boolean
     wrong?: boolean
     copied?: boolean
+    error?: string
+    after?: string
     
     dataMask?: string
     dataMaskaTokens?: string
@@ -57,6 +77,7 @@
     name?: InputHTMLAttributes['name']
     placeholder?: InputHTMLAttributes['placeholder']
     autocomplete?: InputHTMLAttributes['autocomplete']
+    readonly?: InputHTMLAttributes['readonly']
   }
 
   const model = defineModel()

@@ -3,21 +3,18 @@
     <link rel="icon" href="/favicon.ico" />
   </Head>
   <NuxtLayout>
-    <div :class="`container ${theme}`">
-      <NuxtPage />
-    </div>
+    <NuxtPage :class="$style.page" />
   </NuxtLayout>
 </template>
 
 <script setup lang="ts">
-  const { theme } = useTheme()
-  useProfile({ prefetch: true })
+  const { loadProfile } = useProfile()
+
+  onMounted(loadProfile)
 </script>
 
-<style lang="scss" scope>
-  @import url('/styles/globals.scss');
-
-  .container {
+<style lang="scss" module>
+  .page {
     z-index: 0;
     position: relative;
   }

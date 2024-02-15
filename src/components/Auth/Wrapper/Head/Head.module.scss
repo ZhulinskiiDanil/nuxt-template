@@ -1,0 +1,34 @@
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .backButton {
+    border: none;
+    outline: none;
+    background: none;
+    
+    display: flex;
+    align-items: center;
+    gap: 2px;
+
+    font-weight: 700;
+    font-stretch: 150%;
+    font-size: 1.25rem;
+    line-height: 110%;
+    color: white;
+    transition: .15s ease;
+    cursor: pointer;
+
+    .icon {
+      width: 1.3125rem;
+      height: 1.3125rem;
+      color: currentColor;
+      transform: rotate(90deg);
+
+      * { color: currentColor }
+      [fill]:not([fill~=none]) { fill: currentColor }
+      [stroke]:not([stroke~=none]) { stroke: currentColor }
+    }
+  }
+}

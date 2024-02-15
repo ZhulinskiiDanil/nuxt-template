@@ -1,4 +1,3 @@
-import { uuid } from '@/common/funcs/uuid'
 import type {
   NotificationMessage,
   MessageHandler
@@ -46,7 +45,7 @@ function push(
   type: string | null = null
 ) {
   const message = {
-    id: uuid(),
+    id: $utils.shared.uuid(),
     title: options.title || null,
     content: options.content,
     type

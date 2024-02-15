@@ -3,43 +3,116 @@
 label.label {
   display: flex;
   align-items: center;
-  gap: .8rem;
-  
+  gap: .5rem;
+
   font-size: .9rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   user-select: none;
+
+  padding: 0.75rem 1rem;
+  border: 2px solid;
+  border-radius: 0.5rem;
   transition: .15s ease;
 
-  &.password {
-    padding-right: 1rem;
+  &:has(.error.active) {
+    .inputContainer {
+      input {
+        top: .375rem;
+      }
+    }
+  }
+
+  &:not(:has(input:read-only), :has(input:disabled)) {
+    cursor: text;
   }
   
   &.fill {
     width: 100%;
   }
 
-  input {
+  .inputContainer {
+    position: relative;
     width: 100%;
     height: 100%;
-    border: none;
-    outline: none;
-    background: none;
-    width: 100%;
-    padding: 0.75rem 1rem;
-    font-size: inherit;
-    transition: .15s ease;
+    transition: inherit;
+
+    .error {
+      position: absolute;
+      top: -.8rem;
+      max-width: 100%;
+      white-space: nowrap;
+      text-overflow: ellipsis;
+      
+      font-weight: 500;
+      font-size: 0.62rem;
+      opacity: 0;
+      transition: .15s ease;
+
+      &.active {
+        top: -.4rem;
+        opacity: 1;
+      }
+    }
+
+    input {
+      position: relative;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      background: none;
+      width: 100%;
+      font-size: inherit;
+      transition: inherit;
+    }
+  }
+
+  &:has(.icon.eye) {
+    .icon:not(.eye) {
+      display: none;
+    }
+
+    .after {
+      display: none;
+    }
+  }
+
+  .after {
+    flex-shrink: 0;
+    white-space: nowrap;
+    font-weight: 500;
+    font-size: 1rem;
   }
 
   .icon {
+    $size: 1rem;
+    height: $size;
     flex-shrink: 0;
-    width: 1.125rem;
-    height: 1.125rem;
-    cursor: pointer;
+    
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    &.eye {
+      margin-left: auto;
+      cursor: pointer;
+    }
+
+    * {
+      color: currentColor;
+    }
+
+    [stroke]:not([stroke~=none]) { stroke: currentColor; }
+    [fill]:not([fill~=none]) { fill: currentColor; }
   }
 
-  &:has(input:disabled) {
+  &:has(input:disabled, input:read-only) {
+    user-select: none;
+    -webkit-user-drag: none;
     cursor: default;
     
     * {

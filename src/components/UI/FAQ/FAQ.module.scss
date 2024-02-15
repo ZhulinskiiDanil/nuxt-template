@@ -1,0 +1,102 @@
+.faq {
+  .title {
+    font-weight: 700;
+    font-stretch: 150%;
+    font-size: 1.5rem;
+    color: #fff;
+  }
+
+  .title ~ .list {
+    margin-top: 2.25rem;
+  }
+
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    .item {
+      border-radius: 1rem;
+      background: #20242A;
+      transition: .15s ease;
+      cursor: pointer;
+  
+      &:hover {
+        opacity: .9;
+      }
+  
+      &:focus {
+        .head {
+          .arrow {
+            transform: rotate(-180deg);
+          }
+        }
+  
+        .text {
+          display: block;
+        }
+      }
+  
+      .head {
+        display: flex;
+        padding: 1.875rem 1.25rem;
+        justify-content: space-between;
+        align-items: center;
+        align-self: stretch;
+        user-select: none;
+        -webkit-user-drag: none;
+  
+        span {
+          font-size: 1.5rem;
+          font-weight: 500;
+          line-height: 90%; /* 1.35rem */
+          font-stretch: 120%;
+          color: #fff;
+        }
+  
+        .arrow {
+          width: 1.75rem;
+          height: 1.75rem;
+        }
+      }
+  
+      .text {
+        padding: 0 1.25rem 1.5rem;
+  
+        font-weight: 400;
+        font-size: 1.25rem;
+        line-height: 110%;
+        color: #8d97a6;
+        display: none;
+      }
+    }
+  }
+
+  &.big {
+    .title {
+      font-size: 2.5rem;
+    }
+  }
+
+  @media (max-width: 430px) {
+    .title {
+      font-size: 1.5rem !important;
+    }
+
+    .list {
+      .item {
+        .head {
+          padding: 1.5rem 1.25rem;
+
+          span {
+            font-size: 1rem;
+          }
+        }
+
+        .text {
+          font-size: .88rem;
+        }
+      }
+    }
+  }
+}

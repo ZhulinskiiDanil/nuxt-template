@@ -6,14 +6,35 @@
     <!-- ! ============== BUTTONS EXAMPLE ============== -->
     <!-- White is default type of button -->
     <div :class="$style.row">
-      <UIButton type="white">
+      <UIButton variant="primary">
         {{ $t('helloWorld') }}
+        <template #icon>
+          <SVGActiveBell />
+        </template>
       </UIButton>
-      <UIButton type="gray">
+      <UIButton variant="safe">
         {{ $t('helloWorld') }}
+        <template #icon>
+          <SVGActiveBell />
+        </template>
       </UIButton>
-      <UIButton type="stroked">
+      <UIButton variant="secondary">
         {{ $t('helloWorld') }}
+        <template #icon>
+          <SVGActiveBell />
+        </template>
+      </UIButton>
+      <UIButton variant="tertiary">
+        {{ $t('helloWorld') }}
+        <template #icon>
+          <SVGActiveBell />
+        </template>
+      </UIButton>
+      <UIButton variant="custom">
+        {{ $t('helloWorld') }}
+        <template #icon>
+          <SVGActiveBell />
+        </template>
       </UIButton>
     </div>
 
@@ -42,8 +63,17 @@
         name="new-password"
         autocomplete="new-password"
         :wrong="v$.login.$error"
+        :error="v$.login.$errors[0]?.$message || ''"
         v-model="v$.login.$model"
-      />
+        after="after text"
+      >
+        <template #before-icon>
+          <SVGActiveBell />
+        </template>
+        <template #after-icon>
+          <SVGActiveBell />
+        </template>
+      </UIInput>
       <div v-for="error of v$.login.$errors" :key="error.$uid">
         {{ error.$message }}
       </div>
@@ -215,18 +245,18 @@
 
 
 
-      <!-- ! ============== WRAPPED INPUTS EXAMPLE ============== -->
-      <div :class="$style.row">
-        <span>
-          <i><b>Checkbox:</b> {{ v$.switcher.$model }}</i>
-        </span>
-        <UISwitcher
-          v-model="v$.switcher.$model"
-        />
-        <div v-for="error of v$.switcher.$errors" :key="error.$uid">
-          {{ error.$message }}
-        </div>
+    <!-- ! ============== CHECKBOX EXAMPLE ============== -->
+    <div :class="$style.row">
+      <span>
+        <i><b>Checkbox:</b> {{ v$.switcher.$model }}</i>
+      </span>
+      <UISwitcher
+        v-model="v$.switcher.$model"
+      />
+      <div v-for="error of v$.switcher.$errors" :key="error.$uid">
+        {{ error.$message }}
       </div>
+    </div>
 
 
 

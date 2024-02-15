@@ -30,7 +30,7 @@
   }>()
 
   const theme = ref(
-    props.theme || uiConfig.getTheme?.() || 'light'
+    props.theme || uiConfig.getTheme?.().value || 'light'
   )
 
   function test(e: Event) {

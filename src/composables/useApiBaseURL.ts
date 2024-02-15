@@ -1,5 +1,3 @@
 export function useApiBaseURL(): string {
-  const { app } = useRuntimeConfig()
-
-  return app.BASE_URL
+  return useRuntimeConfig()?.public?.BASE_URL || ''
 }

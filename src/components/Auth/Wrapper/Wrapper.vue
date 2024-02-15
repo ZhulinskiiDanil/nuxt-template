@@ -1,122 +1,132 @@
 <template>
-  <div
-    :class="[
-      $style.wrapper,
-      $style[theme],
-      backgroundShown === false && $style.transparent
-    ]"
+  <AuthWrapperLayout
+    :class="$style.layout"
+    :footerText="footerText"
+    :footerTextMaxWidth="footerTextMaxWidth"
+    @fn="(...args) => $emit('fn', ...args)"
   >
-    <div :class="$style.cw">
-      <div :class="$style.content">
-        <div :class="$style.cw">
-          <div v-if="title || buttonBack" :class="$style.title">
-            <UIButton
-              @click="$router.back()"
-              v-if="buttonBack"
-              type="gray"
-              mini
-            >
-              <template #icon>
-                <SVGFullArrowLeft />
-              </template>
-            </UIButton>
-            <h1>
-              {{ title }}
-            </h1>
-          </div>
-          <h3 v-if="description" :class="$style.description">
-            {{ description }}
-          </h3>
-          <div :class="$style.form">
-            <div :class="$style.inner">
-              <slot></slot>
-              <div v-if="additionals && additionals.length > 0" :class="$style.additional">
-                <div
-                  v-for="additional in additionals"
-                  :class="$style.item"
-                >
-                  <span :class="$style.item__title">
-                    {{ additional.title }}
-                  </span>
-                  <NuxtLink
-                    v-if="additional.path && additional.link"
-                    :class="$style.item__link"
-                    :to="localePath(additional.path)"
-                  >
-                    {{ additional.link }}
-                  </NuxtLink>
-                  <span
-                    v-if="additional.id && additional.fn"
-                    @click="$emit('fn', additional.id)"
-                    :class="$style.item__fn"
-                  >
-                    {{ additional.fn }}
-                  </span>
-                </div>
-              </div>
-            </div>
-            <div v-if="error" :class="$style.error">
-              {{ error }}
-            </div>
-          </div>
-          <NuxtLink
-            v-if="linkedAdditionalButton"
-            :to="linkedAdditionalButton.href"
-          >
-            <UIButton
-              @click="$emit('additionalButtonClick')"
-              :class="$style.additionalButton"
-              type="black"
-              uppercase
-              fill
-            >
-              {{ linkedAdditionalButton.name }}
-            </UIButton>
-          </NuxtLink>
-          <UIButton
-            v-if="additionalButton"
-            @click="$emit('additionalButtonClick')"
-            :class="$style.additionalButton"
-            type="black"
-            uppercase
-            fill
-          >
-            {{ additionalButton }}
-          </UIButton>
-        </div>
+    <AuthWrapperHead
+      :class="$style.head"
+      @backButtonClick="$emit('backButtonClick')"
+      :backButton="backButton"
+      :steps="steps"
+    />
+    <img
+      v-if="logoVisible"
+      :class="$style.logo"
+      src="/logo.svg"
+      alt="Logo"
+    />
+    <AuthWrapperTitle
+      :class="$style.title"
+      :title="title"
+      :titleCentered="titleCentered"
+      :steps="steps"
+    />
+    <h3
+      v-if="description"
+      :class="[$style.description, descriptionCentered && $style.centered]"
+    >
+      {{ description }}
+    </h3>
+    <UITab v-if="tabs" :class="$style.tab" fill>
+      <NuxtLink
+        v-for="tab of tabs"
+        style="width: 100%; min-width: min-content"
+        :to="localePath(tab.href)"
+      >
+        <UITabButton
+          fill
+          :active="$route.path === localePath(tab.href)"
+        >
+          {{ tab.name }}
+        </UITabButton>
+      </NuxtLink>
+    </UITab>
+    <div :class="$style.form">
+      <slot name="default"></slot>
+      <AuthWrapperAdditionals
+        :class="$style.additionals"
+        :additionals="additionals"
+      />
+      <div v-if="error" :class="$style.error">
+        {{ error }}
       </div>
     </div>
-  </div>
+    <NuxtLink
+      v-if="linkedAdditionalButton"
+      :to="linkedAdditionalButton.href"
+    >
+      <UIButton
+        @click="$emit('additionalButtonClick')"
+        :class="$style.additionalButton"
+        uppercase
+        fill
+      >
+        {{ linkedAdditionalButton.name }}
+      </UIButton>
+    </NuxtLink>
+    <UIButton
+      v-if="additionalButton"
+      @click="$emit('additionalButtonClick')"
+      :class="$style.additionalButton"
+      uppercase
+      fill
+    >
+      {{ additionalButton }}
+    </UIButton>
+    <UICheckbox
+      v-if="checkboxText"
+      :title="checkboxText"
+      :class="$style.checkbox"
+      :disabled="!!checkboxDisabled"
+      v-model="checkbox"
+    />
+    <template v-if="$slots.footer" #footer>
+      <slot name="footer"></slot>
+    </template>
+  </AuthWrapperLayout>
 </template>
 
 <script setup lang="ts">
+  import type { AuthWrapperHeadProps } from './Head/types'
+  import type { AuthWrapperAdditionalsProps } from './Additionals/types'
+  import type { AuthWrapperTitleProps } from './Title/types'
+
+  type Props = {
+    error?: string | null
+    description?: string
+    descriptionCentered?: boolean
+    checkboxText?: string
+    checkboxDisabled?: boolean
+    additionalButton?: string
+    linkedAdditionalButton?: { href: string, name: string }
+    logoVisible?: boolean
+    footerText?: {
+      text: string
+      linkHref?: string
+      fnId?: string | null
+    }[]
+    footerTextMaxWidth?: number | null
+    tabs?: {
+      name: string
+      href: string
+    }[]
+  } & AuthWrapperHeadProps
+    & AuthWrapperTitleProps
+    & AuthWrapperAdditionalsProps
+
+  const slots = defineSlots<{ footer: [], default: [] }>()
+  const checkbox = defineModel('checkbox')
   const emit = defineEmits<{
     cancel: []
     submit: []
+    backButtonClick: []
     additionalButtonClick: []
     fn: [fnId: string | number]
   }>()
-  const props = withDefaults(defineProps<{
-    title?: string
-    description?: string
-    error?: string | null
-    buttonBack?: boolean
-    backgroundShown?: boolean
-    additionalButton?: string
-    linkedAdditionalButton?: { href: string, name: string }
-    additionals?: {
-      id?: string | number,
-      title: string,
-      link?: string,
-      path?: string,
-      fn?: string
-    }[]
-  }>(), {
-    backgroundShown: true,
-    buttonBack: false
-  })
+  defineProps<Props>()
 
-  const { theme } = useTheme()
   const localePath = useLocalePath()
 </script>
 

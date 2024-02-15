@@ -18,7 +18,7 @@
 
   &.palindrome {
     .circle {
-      background: rgb($bgColor) !important;
+      background: $bgColor !important;
     }
   }
 
@@ -27,7 +27,7 @@
     height: $size;
     padding: 1px;
     border-radius: 50%;
-    background: rgb($bgColor);
+    background: $bgColor;
     transition: .15s ease;
 
     svg {
@@ -63,7 +63,7 @@
     padding-right: $size;
 
     .circle {
-      background: rgb($bgColor);
+      background: $bgColor;
     }
   }
 }

@@ -10,13 +10,27 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     public: {
-      BASE_URL: process.env.VITE_API_URL,
-      NOTSKIP_VK_BOT_URL: process.env.NOTSKIP_VK_BOT_URL,
-      NOTSKIP_TG_BOT_URL: process.env.NOTSKIP_TG_BOT_URL
+      BASE_URL: process.env.VITE_API_URL
     }
   },
   srcDir: './src/',
-  ssr: true,
+  ssr: false,
+  css: [
+    '~/assets/styles/globals.scss'
+  ],
+  app: {
+    head: {
+      link: [
+        {
+          rel: 'preload',
+          href: '/fonts/RobotoFlex/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].woff2',
+          as: 'font',
+          type: 'font/woff2',
+          crossorigin: "anonymous"
+        }
+      ]
+    }
+  },
   vite: {
     resolve: {
       alias: {
@@ -27,7 +41,7 @@ export default defineNuxtConfig({
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: "@import '/public/styles/_vars.scss';"
+          additionalData: "@import '~/assets/styles/_vars.scss';\n"
         }
       },
       modules: {
@@ -49,13 +63,13 @@ export default defineNuxtConfig({
     locales: [
       {
         code: 'en',
-        file: 'en-EN/index.ts',
-        name: 'EN'
+        file: 'ru-RU/index.ts', // TODO: Подключить язык en-EN/index.ts
+        name: 'English'
       },
       {
         code: 'ru',
         file: 'ru-RU/index.ts',
-        name: 'RU'
+        name: 'Русский'
       }
     ]
   }

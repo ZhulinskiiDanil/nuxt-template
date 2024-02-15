@@ -1,0 +1,30 @@
+button.button.secondary {
+  &.dark,
+  &.light {
+    color: $buttonSecondaryText;
+    background: $buttonSecondaryBg;
+
+    &:has(svg) { background: $buttonSecondaryBg; }
+
+    &:hover,
+    &.hovered { background: $buttonSecondaryBgHover; }
+
+    &:focus,
+    &.focused { background: $buttonSecondaryBgFocus; }
+
+    &:active,
+    &.pressed { background: $buttonSecondaryBgPressed; }
+  }
+  
+  &:disabled,
+  &.disabled,
+  &[data-disabled] {
+    border: none;
+
+    &.dark,
+    &.light {
+      color: $buttonSecondaryTextDisabled;
+      background: $buttonSecondaryBgDisabled;
+    }
+  }
+}

@@ -7,8 +7,19 @@
     <div v-if="description" :class="$style.description">
       {{ description }}
     </div>
-    <div :class="$style.inputs">
-      <slot></slot>
+    <div v-if="!isEmpty" :class="$style.inputs">
+      <slot name="default"></slot>
+      <NuxtLink data-link :to="submitLink || ''">
+        <UIButton
+          fill
+          v-if="stepButtonTitle"
+          :disabled="disabled"
+          style="white-space: nowrap"
+          type="black"
+        >
+          {{ stepButtonTitle }}
+        </UIButton>
+      </NuxtLink>
     </div>
     <div
       v-if="cancelTitle || submitTitle"
@@ -16,38 +27,43 @@
     >
       <UIButton
         fill
-        uppercase
         v-if="cancelTitle"
         @click.stop.prevent="cancel"
         type="stroked"
       >
         {{ cancelTitle }}
       </UIButton>
-      <UIButton
-        fill
-        uppercase
-        v-if="submitTitle"
-        :disabled="!!(legalTitle && !legal) || submitDisabled"
-        style="white-space: nowrap"
-        type="black"
-      >
-        {{ submitTitle }}
-      </UIButton>
+      <NuxtLink data-link :to="submitLink || ''">
+        <UIButton
+          fill
+          v-if="submitTitle"
+          :disabled="disabled"
+          style="white-space: nowrap"
+          type="black"
+        >
+          {{ submitTitle }}
+        </UIButton>
+      </NuxtLink>
     </div>
   </form>
 </template>
 
 <script setup lang="ts">
   const emit = defineEmits<{ submit: [], cancel: [] }>()
-  const props = defineProps<{
+  const props = withDefaults(defineProps<{
     cancelTitle?: string
     submitTitle?: string
-    submitDisabled?: boolean
+    submitLink?: string
+    stepButtonTitle?: string
+    isEmpty?: boolean
     description?: string
-    legalTitle?: string
-  }>()
+    disabled?: boolean
+  }>(), {
+    isEmpty: false
+  })
 
   const legal = ref(false)
+
   function changeLegal(checked: boolean) {
     legal.value = checked
   }
@@ -59,8 +75,6 @@
   }
 
   function submit() {
-    if (props?.legalTitle && !legal.value) return
-    
     emit('submit')
   }
 </script>

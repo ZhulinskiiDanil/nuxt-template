@@ -1,0 +1,19 @@
+.steps {
+  flex-shrink: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  padding: .25rem .5rem;
+  min-width: 3rem;
+  
+  color: #8d97a6;
+  background: #383c44;
+  font-weight: 500;
+  font-size: .88rem;
+  line-height: 110%;
+  border-radius: 3.06rem;
+  user-select: none;
+  -webkit-user-drag: none;
+}

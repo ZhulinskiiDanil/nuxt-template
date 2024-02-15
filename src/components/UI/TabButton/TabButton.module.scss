@@ -1,0 +1,33 @@
+.button {
+  border: none;
+  outline: none;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: .62rem;
+  min-width: max-content;
+
+  color: #8d97a6;
+  background: #282d35;
+  font-weight: 700;
+  font-size: 1.25rem;
+  line-height: 110%;
+  transition: .3s ease;
+  cursor: pointer;
+
+  &.active {
+    cursor: default;
+    background: #1c2026;
+    color: #fff;
+  }
+
+  &:not(.active):hover {
+    background: #282d35;
+    color: #fff;
+  }
+
+  &.fill {
+    width: 100%;
+  }
+}

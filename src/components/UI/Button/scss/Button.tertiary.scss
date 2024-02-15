@@ -1,0 +1,30 @@
+button.button.tertiary {
+  &.dark,
+  &.light {
+    color: $buttonTertiaryText;
+    background: $buttonTertiaryBg;
+
+    &:has(svg) { background: $buttonTertiaryBg; }
+
+    &:hover,
+    &.hovered { background: $buttonTertiaryBgHover; }
+
+    &:focus,
+    &.focused { background: $buttonTertiaryBgFocus; }
+
+    &:active,
+    &.pressed { background: $buttonTertiaryBgPressed; }
+  }
+  
+  &:disabled,
+  &.disabled,
+  &[data-disabled] {
+    border: none;
+
+    &.dark,
+    &.light {
+      color: $buttonTertiaryTextDisabled;
+      background: $buttonTertiaryBgDisabled;
+    }
+  }
+}

@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-  defineProps<{ steps?: { current: number, max: number } }>()
+defineProps<{ steps?: { current: number; max: number } }>();
 </script>
 
 <style lang="scss" src="./StepsBadge.module.scss" module></style>

@@ -1,10 +1,10 @@
 .switcher {
   $size: 20px;
-  
+
   display: inline-block;
   padding: 2px;
   border-radius: 9999px;
-  transition: .15s ease;
+  transition: 0.15s ease;
   transition-property: padding background-color;
   width: min-content;
 
@@ -28,7 +28,7 @@
     padding: 1px;
     border-radius: 50%;
     background: $bgColor;
-    transition: .15s ease;
+    transition: 0.15s ease;
 
     svg {
       width: 100%;

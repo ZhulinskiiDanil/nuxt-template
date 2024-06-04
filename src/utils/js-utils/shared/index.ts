@@ -1,3 +1,3 @@
-export * from './uuid'
-export * from './isLink'
-export * from './youTubeLinkWithEmbed'
+export * from './uuid';
+export * from './isLink';
+export * from './youTubeLinkWithEmbed';

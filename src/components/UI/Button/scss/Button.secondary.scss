@@ -4,18 +4,26 @@ button.button.secondary {
     color: $buttonSecondaryText;
     background: $buttonSecondaryBg;
 
-    &:has(svg) { background: $buttonSecondaryBg; }
+    &:has(svg) {
+      background: $buttonSecondaryBg;
+    }
 
     &:hover,
-    &.hovered { background: $buttonSecondaryBgHover; }
+    &.hovered {
+      background: $buttonSecondaryBgHover;
+    }
 
     &:focus,
-    &.focused { background: $buttonSecondaryBgFocus; }
+    &.focused {
+      background: $buttonSecondaryBgFocus;
+    }
 
     &:active,
-    &.pressed { background: $buttonSecondaryBgPressed; }
+    &.pressed {
+      background: $buttonSecondaryBgPressed;
+    }
   }
-  
+
   &:disabled,
   &.disabled,
   &[data-disabled] {

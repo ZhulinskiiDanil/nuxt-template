@@ -33,7 +33,7 @@ footer.footer {
     .links {
       display: flex;
       flex-direction: column;
-      
+
       .title {
         font-family: 'Akrobat', sans-serif;
         font-size: 2rem;
@@ -42,19 +42,19 @@ footer.footer {
         letter-spacing: -0.05rem;
         text-transform: uppercase;
       }
-  
+
       .list {
         display: flex;
         flex-direction: column;
         margin-top: 2rem;
         gap: 1.75rem;
-  
+
         .link {
           color: #555;
           font-size: 1.25rem;
           line-height: 107.4%; /* 1.3425rem */
           letter-spacing: -0.03125rem;
-          transition: .15s ease;
+          transition: 0.15s ease;
 
           &:hover {
             color: #fff;
@@ -70,7 +70,7 @@ footer.footer {
     justify-content: space-between;
     margin-top: 4.5rem;
     gap: 2rem;
-    
+
     .copyright {
       color: #555;
       font-size: 1.25rem;
@@ -86,23 +86,23 @@ footer.footer {
       .icon {
         width: 1.5rem;
         height: 1.5rem;
-        transition: .15s ease;
+        transition: 0.15s ease;
         cursor: pointer;
 
-        [fill]:not([fill~=none]) {
+        [fill]:not([fill~='none']) {
           fill: #555;
         }
 
-        [stroke]:not([stroke~=none]) {
+        [stroke]:not([stroke~='none']) {
           stroke: #555;
         }
 
         &:hover {
-          [fill]:not([fill~=none]) {
+          [fill]:not([fill~='none']) {
             fill: #fff;
           }
-  
-          [stroke]:not([stroke~=none]) {
+
+          [stroke]:not([stroke~='none']) {
             stroke: #fff;
           }
         }
@@ -122,11 +122,11 @@ footer.footer {
       .button {
         display: none;
       }
-  
+
       .linksWrapper {
         margin-top: 2.25rem;
         gap: 3rem;
-  
+
         .links {
           .list {
             margin-top: 2.25rem;
@@ -160,7 +160,7 @@ footer.footer {
 
           .list {
             margin-top: 1.5rem;
-            gap: .88rem;
+            gap: 0.88rem;
 
             .link {
               font-size: 1rem;

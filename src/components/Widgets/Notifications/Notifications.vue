@@ -18,30 +18,38 @@
 </template>
 
 <script setup lang="ts">
-  import type { NotificationMessage } from '@/ts';
+import type { NotificationMessage } from '@/ts';
 
-  type MessageData = {
-    error?: boolean
-    success?: boolean
-  }
+type MessageData = {
+  error?: boolean;
+  success?: boolean;
+};
 
-  const notifications = ref<(NotificationMessage & MessageData)[]>([])
-  const TIME_TO_REMOVE = 5000
+const notifications = ref<(NotificationMessage & MessageData)[]>(
+  []
+);
+const TIME_TO_REMOVE = 5000;
 
-  useNotification((message, data?: MessageData) => {
-    notifications.value.push({
-      ...message, ...(data || {})
-    })
+useNotification((message, data?: MessageData) => {
+  notifications.value.push({
+    ...message,
+    ...(data || {})
+  });
 
-    setTimeout(() => {
-      const messageIndex = notifications.value
-        .findIndex(elm => elm.id === message.id)
+  setTimeout(() => {
+    const messageIndex = notifications.value.findIndex(
+      (elm) => elm.id === message.id
+    );
 
-        if (messageIndex >= 0) {
-          notifications.value.splice(messageIndex, 1)
-        }
-    }, TIME_TO_REMOVE);
-  })
+    if (messageIndex >= 0) {
+      notifications.value.splice(messageIndex, 1);
+    }
+  }, TIME_TO_REMOVE);
+});
 </script>
 
-<style lang="scss" src="./Notifications.module.scss" module></style>
+<style
+  lang="scss"
+  src="./Notifications.module.scss"
+  module
+></style>

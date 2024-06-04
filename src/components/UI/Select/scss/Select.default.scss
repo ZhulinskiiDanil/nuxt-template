@@ -12,8 +12,12 @@
       color: $color;
 
       .arrow {
-        [fill]:not([fill~=none]) { fill: $color; }
-        [stroke]:not([stroke~=none]) { stroke: $color; }
+        [fill]:not([fill~='none']) {
+          fill: $color;
+        }
+        [stroke]:not([stroke~='none']) {
+          stroke: $color;
+        }
       }
     }
   }
@@ -27,8 +31,12 @@
     .arrow {
       color: $color;
 
-      [fill]:not([fill~=none]) { fill: $color; }
-      [stroke]:not([stroke~=none]) { stroke: $color; }
+      [fill]:not([fill~='none']) {
+        fill: $color;
+      }
+      [stroke]:not([stroke~='none']) {
+        stroke: $color;
+      }
     }
   }
 

@@ -1,8 +1,5 @@
 <template>
-  <div :class="[
-    $style.faq,
-    big && $style.big
-  ]">
+  <div :class="[$style.faq, big && $style.big]">
     <p v-if="title" :class="$style.title">
       {{ title }}
     </p>
@@ -27,29 +24,29 @@
 </template>
 
 <script setup lang="ts">
-  defineProps<{
-    big?: boolean
-    title: string
-    list: {
-      id: number | string
-      title: string
-      text: string
-    }[]
-  }>()
+defineProps<{
+  big?: boolean;
+  title: string;
+  list: {
+    id: number | string;
+    title: string;
+    text: string;
+  }[];
+}>();
 
-  function blurElelement(e: Event) {
-    const target = e.currentTarget as HTMLElement
+function blurElelement(e: Event) {
+  const target = e.currentTarget as HTMLElement;
 
-    if (target && target === document.activeElement) {
-      e.preventDefault()
+  if (target && target === document.activeElement) {
+    e.preventDefault();
 
-      setTimeout(() => {
-        if (target) {
-          target.blur()
-        }
-      }, 0)
-    }
+    setTimeout(() => {
+      if (target) {
+        target.blur();
+      }
+    }, 0);
   }
+}
 </script>
 
 <style lang="scss" src="./FAQ.module.scss" module></style>

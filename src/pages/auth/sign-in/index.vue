@@ -10,9 +10,9 @@
 </template>
 
 <script setup lang="ts">
-  const { t } = useI18n()
+const { t } = useI18n();
 
-  definePageMeta({ layout: 'auth' })
-  useSeoMeta({ title: t('auth.signIn.seo.title') })
+definePageMeta({ layout: 'auth' });
+useSeoMeta({ title: t('auth.signIn.seo.title') });
 </script>
 <style lang="scss" src="./index.module.scss" module></style>

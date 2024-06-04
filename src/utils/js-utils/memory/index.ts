@@ -1,1 +1,1 @@
-export * from './humanFileSize'
+export * from './humanFileSize';

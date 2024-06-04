@@ -1,4 +1,4 @@
 export type AuthWrapperHeadProps = {
-  backButton?: boolean
-  steps?: { current: number, max: number }
-}
+  backButton?: boolean;
+  steps?: { current: number; max: number };
+};

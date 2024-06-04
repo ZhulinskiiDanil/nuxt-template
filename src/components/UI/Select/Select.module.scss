@@ -1,4 +1,4 @@
-@import "./scss/Select.default.scss";
+@import './scss/Select.default.scss';
 
 .select {
   $borderRadius: 0;
@@ -10,7 +10,7 @@
   line-height: 120%; /* 19.2px */
   cursor: pointer;
 
-  font-size: .8rem;
+  font-size: 0.8rem;
 
   &.active {
     z-index: 1;
@@ -41,17 +41,17 @@
 
     span {
       color: inherit;
-      transition: .2s ease;
+      transition: 0.2s ease;
     }
 
     .arrow {
-      $size: .75rem;
+      $size: 0.75rem;
 
       width: $size;
       height: $size;
       transform: rotate(-90deg);
-      transition: .2s ease;
-      
+      transition: 0.2s ease;
+
       * {
         transition: inherit;
       }
@@ -73,12 +73,12 @@
     opacity: 0;
 
     .option {
-      padding: .75rem 1rem;
+      padding: 0.75rem 1rem;
       line-height: 120%;
       /* 19.2px */
       z-index: 1;
       flex-shrink: 0;
-      transition: .15s ease;
+      transition: 0.15s ease;
       cursor: pointer;
 
       user-select: none;

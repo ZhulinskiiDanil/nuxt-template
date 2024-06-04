@@ -5,18 +5,22 @@ $animation: ShowMessage 6s ease;
     opacity: 0;
     transform: translate3d(100%, 0, 0);
     scale: 0;
-  } 5% {
+  }
+  5% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
     scale: 1;
-  } 75% {
+  }
+  75% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
     scale: 1;
-  } 80%, to {
+  }
+  80%,
+  to {
     opacity: 0;
     transform: translate3d(100%, 0, 0);
-    scale: .5;
+    scale: 0.5;
   }
 }
 
@@ -30,15 +34,20 @@ $animation: ShowMessage 6s ease;
   animation: $animation;
 
   &.error {
-    border-top: 1px solid rgba(206, 37, 37, 0.40);
-    background: linear-gradient(180deg, rgba(206, 37, 37, 0.08) 0%, rgba(206, 37, 37, 0.00) 59.76%), #121212;
+    border-top: 1px solid rgba(206, 37, 37, 0.4);
+    background: linear-gradient(
+        180deg,
+        rgba(206, 37, 37, 0.08) 0%,
+        rgba(206, 37, 37, 0) 59.76%
+      ),
+      #121212;
   }
 
   .title {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: .5rem;
+    gap: 0.5rem;
 
     font-size: 1.25rem;
     font-weight: 500;

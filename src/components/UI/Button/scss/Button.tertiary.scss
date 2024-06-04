@@ -4,18 +4,26 @@ button.button.tertiary {
     color: $buttonTertiaryText;
     background: $buttonTertiaryBg;
 
-    &:has(svg) { background: $buttonTertiaryBg; }
+    &:has(svg) {
+      background: $buttonTertiaryBg;
+    }
 
     &:hover,
-    &.hovered { background: $buttonTertiaryBgHover; }
+    &.hovered {
+      background: $buttonTertiaryBgHover;
+    }
 
     &:focus,
-    &.focused { background: $buttonTertiaryBgFocus; }
+    &.focused {
+      background: $buttonTertiaryBgFocus;
+    }
 
     &:active,
-    &.pressed { background: $buttonTertiaryBgPressed; }
+    &.pressed {
+      background: $buttonTertiaryBgPressed;
+    }
   }
-  
+
   &:disabled,
   &.disabled,
   &[data-disabled] {

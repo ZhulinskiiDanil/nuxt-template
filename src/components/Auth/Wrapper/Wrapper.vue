@@ -25,7 +25,10 @@
     />
     <h3
       v-if="description"
-      :class="[$style.description, descriptionCentered && $style.centered]"
+      :class="[
+        $style.description,
+        descriptionCentered && $style.centered
+      ]"
     >
       {{ description }}
     </h3>
@@ -89,45 +92,45 @@
 </template>
 
 <script setup lang="ts">
-  import type { AuthWrapperHeadProps } from './Head/types'
-  import type { AuthWrapperAdditionalsProps } from './Additionals/types'
-  import type { AuthWrapperTitleProps } from './Title/types'
+import type { AuthWrapperHeadProps } from './Head/types';
+import type { AuthWrapperAdditionalsProps } from './Additionals/types';
+import type { AuthWrapperTitleProps } from './Title/types';
 
-  type Props = {
-    error?: string | null
-    description?: string
-    descriptionCentered?: boolean
-    checkboxText?: string
-    checkboxDisabled?: boolean
-    additionalButton?: string
-    linkedAdditionalButton?: { href: string, name: string }
-    logoVisible?: boolean
-    footerText?: {
-      text: string
-      linkHref?: string
-      fnId?: string | null
-    }[]
-    footerTextMaxWidth?: number | null
-    tabs?: {
-      name: string
-      href: string
-    }[]
-  } & AuthWrapperHeadProps
-    & AuthWrapperTitleProps
-    & AuthWrapperAdditionalsProps
+type Props = {
+  error?: string | null;
+  description?: string;
+  descriptionCentered?: boolean;
+  checkboxText?: string;
+  checkboxDisabled?: boolean;
+  additionalButton?: string;
+  linkedAdditionalButton?: { href: string; name: string };
+  logoVisible?: boolean;
+  footerText?: {
+    text: string;
+    linkHref?: string;
+    fnId?: string | null;
+  }[];
+  footerTextMaxWidth?: number | null;
+  tabs?: {
+    name: string;
+    href: string;
+  }[];
+} & AuthWrapperHeadProps &
+  AuthWrapperTitleProps &
+  AuthWrapperAdditionalsProps;
 
-  const slots = defineSlots<{ footer: [], default: [] }>()
-  const checkbox = defineModel('checkbox')
-  const emit = defineEmits<{
-    cancel: []
-    submit: []
-    backButtonClick: []
-    additionalButtonClick: []
-    fn: [fnId: string | number]
-  }>()
-  defineProps<Props>()
+const slots = defineSlots<{ footer: []; default: [] }>();
+const checkbox = defineModel('checkbox');
+const emit = defineEmits<{
+  cancel: [];
+  submit: [];
+  backButtonClick: [];
+  additionalButtonClick: [];
+  fn: [fnId: string | number];
+}>();
+defineProps<Props>();
 
-  const localePath = useLocalePath()
+const localePath = useLocalePath();
 </script>
 
 <style lang="scss" src="./Wrapper.module.scss" module></style>

@@ -1,10 +1,10 @@
-import type { UIConfig } from "./types";
+import type { UIConfig } from './types';
 
 export const uiConfig: UIConfig = {
-  defaultTheme: "dark",
+  defaultTheme: 'dark',
   getTheme() {
-    const { theme } = useTheme()
-    
-    return theme || { value: 'dark' }
+    const { theme } = useTheme();
+
+    return theme || { value: 'dark' };
   }
-}
+};

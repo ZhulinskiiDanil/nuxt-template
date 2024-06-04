@@ -13,10 +13,12 @@
 </template>
 
 <script setup lang="ts">
-  const { t } = useI18n()
-  const localePath = useLocalePath()
+const { t } = useI18n();
+const localePath = useLocalePath();
 
-  definePageMeta({ layout: 'auth' })
-  useSeoMeta({ title: t('auth.passwordRecoverySuccess.seo.title') })
+definePageMeta({ layout: 'auth' });
+useSeoMeta({
+  title: t('auth.passwordRecoverySuccess.seo.title')
+});
 </script>
 <style lang="scss" src="./index.module.scss" module></style>

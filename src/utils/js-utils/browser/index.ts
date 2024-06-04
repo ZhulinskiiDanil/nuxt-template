@@ -1,2 +1,2 @@
-export * from './url'
-export * from './getImageByURL'
+export * from './url';
+export * from './getImageByURL';

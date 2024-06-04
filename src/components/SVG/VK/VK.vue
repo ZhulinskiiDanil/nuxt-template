@@ -1,8 +1,17 @@
 <template>
-  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-    <path fill-rule="evenodd" clip-rule="evenodd"
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
       d="M0.347656 4.50958C0.536339 13.8704 5.0787 19.4941 13.0418 19.4941H13.4926V14.1368C16.4206 14.4357 18.6324 16.6427 19.5199 19.4941H23.6535C22.5179 15.2349 19.5339 12.8767 17.668 11.9767C19.5304 10.8678 22.151 8.16751 22.7764 4.50598H19.0203C18.2061 7.47625 15.7882 10.1765 13.4891 10.4321V4.50958H9.73287V14.8893C7.40229 14.2881 4.46373 11.379 4.33096 4.50958H0.347656Z"
-      fill="#fff" />
+      fill="#fff"
+    />
   </svg>
 </template>
 

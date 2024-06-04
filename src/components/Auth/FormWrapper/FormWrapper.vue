@@ -49,34 +49,41 @@
 </template>
 
 <script setup lang="ts">
-  const emit = defineEmits<{ submit: [], cancel: [] }>()
-  const props = withDefaults(defineProps<{
-    cancelTitle?: string
-    submitTitle?: string
-    submitLink?: string
-    stepButtonTitle?: string
-    isEmpty?: boolean
-    description?: string
-    disabled?: boolean
-  }>(), {
+const emit = defineEmits<{ submit: []; cancel: [] }>();
+const props = withDefaults(
+  defineProps<{
+    cancelTitle?: string;
+    submitTitle?: string;
+    submitLink?: string;
+    stepButtonTitle?: string;
+    isEmpty?: boolean;
+    description?: string;
+    disabled?: boolean;
+  }>(),
+  {
     isEmpty: false
-  })
-
-  const legal = ref(false)
-
-  function changeLegal(checked: boolean) {
-    legal.value = checked
   }
+);
 
-  const { theme } = useTheme()
+const legal = ref(false);
 
-  function cancel() {
-    emit('cancel')
-  }
+function changeLegal(checked: boolean) {
+  legal.value = checked;
+}
 
-  function submit() {
-    emit('submit')
-  }
+const { theme } = useTheme();
+
+function cancel() {
+  emit('cancel');
+}
+
+function submit() {
+  emit('submit');
+}
 </script>
 
-<style lang="scss" src="./FormWrapper.module.scss" module></style>
+<style
+  lang="scss"
+  src="./FormWrapper.module.scss"
+  module
+></style>

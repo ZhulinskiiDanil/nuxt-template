@@ -8,22 +8,35 @@
   height: 18.12rem;
   padding: 2rem;
   width: 100%;
-  background: linear-gradient(156deg, rgb(52 59 68 / 26%) 0%, #1c2026 100%);
+  background: linear-gradient(
+    156deg,
+    rgb(52 59 68 / 26%) 0%,
+    #1c2026 100%
+  );
 
   &.big {
     height: 19.44rem;
   }
 
   &.active {
-    background:
-      radial-gradient(117.58% 91.32% at 83.5% 129%, rgba(255, 20, 105, .4) 0%, rgba(255, 20, 105, 0) 100%),
-      linear-gradient(156deg, rgb(52 59 68 / 26%) 0%, #1c2026 100%)
-    ;
-    
+    background: radial-gradient(
+        117.58% 91.32% at 83.5% 129%,
+        rgba(255, 20, 105, 0.4) 0%,
+        rgba(255, 20, 105, 0) 100%
+      ),
+      linear-gradient(
+        156deg,
+        rgb(52 59 68 / 26%) 0%,
+        #1c2026 100%
+      );
+
     &::after {
       background: linear-gradient(
-        to bottom, rgb(255, 20, 105), transparent
-      ) border-box;
+          to bottom,
+          rgb(255, 20, 105),
+          transparent
+        )
+        border-box;
     }
   }
 
@@ -40,14 +53,13 @@
     border-radius: inherit;
 
     border: 1px solid transparent;
-    background: linear-gradient(
-      to bottom, #474C55, transparent
-    ) border-box;
+    background: linear-gradient(to bottom, #474c55, transparent)
+      border-box;
     -webkit-mask:
-      linear-gradient(#fff 0 0) padding-box, 
+      linear-gradient(#fff 0 0) padding-box,
       linear-gradient(#fff 0 0);
-    mask: 
-      linear-gradient(#fff 0 0) padding-box, 
+    mask:
+      linear-gradient(#fff 0 0) padding-box,
       linear-gradient(#fff 0 0);
     -webkit-mask-composite: xor;
     mask-composite: exclude;
@@ -60,12 +72,12 @@
     left: 50%;
     top: 0;
     transform: translate3d(-50%, -50%, 0);
-    
+
     display: flex;
     align-items: center;
     padding: 0.5rem 0.75rem;
-    gap: .625rem;
-    
+    gap: 0.625rem;
+
     background: #1c2026;
     border-radius: 999rem;
     white-space: nowrap;
@@ -97,7 +109,7 @@
   }
 
   .oldPrice {
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 
     font-weight: 700;
     font-size: 1.25rem;

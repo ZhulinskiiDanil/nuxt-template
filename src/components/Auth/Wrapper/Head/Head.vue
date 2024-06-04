@@ -8,15 +8,18 @@
       <SVGExpand :class="$style.icon" />
       Назад
     </button>
-    <AuthWrapperStepsBadge :class="$style.steps" :steps="steps" />
+    <AuthWrapperStepsBadge
+      :class="$style.steps"
+      :steps="steps"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-  import type { AuthWrapperHeadProps } from './types'
+import type { AuthWrapperHeadProps } from './types';
 
-  defineEmits<{ backButtonClick: [] }>()
-  defineProps<AuthWrapperHeadProps>()
+defineEmits<{ backButtonClick: [] }>();
+defineProps<AuthWrapperHeadProps>();
 </script>
 
 <style lang="scss" src="./Head.module.scss" module></style>

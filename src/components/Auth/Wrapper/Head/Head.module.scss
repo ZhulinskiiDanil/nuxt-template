@@ -7,7 +7,7 @@
     border: none;
     outline: none;
     background: none;
-    
+
     display: flex;
     align-items: center;
     gap: 2px;
@@ -17,7 +17,7 @@
     font-size: 1.25rem;
     line-height: 110%;
     color: white;
-    transition: .15s ease;
+    transition: 0.15s ease;
     cursor: pointer;
 
     .icon {
@@ -26,9 +26,15 @@
       color: currentColor;
       transform: rotate(90deg);
 
-      * { color: currentColor }
-      [fill]:not([fill~=none]) { fill: currentColor }
-      [stroke]:not([stroke~=none]) { stroke: currentColor }
+      * {
+        color: currentColor;
+      }
+      [fill]:not([fill~='none']) {
+        fill: currentColor;
+      }
+      [stroke]:not([stroke~='none']) {
+        stroke: currentColor;
+      }
     }
   }
 }

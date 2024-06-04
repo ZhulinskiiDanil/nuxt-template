@@ -11,7 +11,7 @@
   user-select: none;
   -webkit-user-drag: none;
 
-  font-size: .8rem;
+  font-size: 0.8rem;
 
   &.active {
     z-index: 1;
@@ -32,7 +32,7 @@
 
       .list {
         bottom: 100%;
-        margin-bottom: .5rem;
+        margin-bottom: 0.5rem;
 
         .arrow {
           transform: rotate(0deg);
@@ -49,7 +49,7 @@
 
       .list {
         top: 100%;
-        margin-top: .5rem;
+        margin-top: 0.5rem;
 
         .arrow {
           transform: rotate(-180deg);
@@ -61,14 +61,14 @@
   .selected {
     display: flex;
     align-items: center;
-    gap: .5rem;
+    gap: 0.5rem;
 
     width: 4rem;
     height: 2rem;
     border-radius: 1rem;
     padding: 0.5rem 0.75rem;
     background: #282d35;
-    transition: .15s ease;
+    transition: 0.15s ease;
 
     &:hover {
       background: #20242a;
@@ -91,17 +91,21 @@
 
       width: $size;
       height: $size;
-      
-      color: #8D97A6;
-      transition: .2s ease;
-      
+
+      color: #8d97a6;
+      transition: 0.2s ease;
+
       * {
         transition: inherit;
         color: currentColor;
       }
 
-      [fill]:not([fill~=none]) { fill: currentColor }
-      [stroke]:not([stroke~=none]) { stroke: currentColor }
+      [fill]:not([fill~='none']) {
+        fill: currentColor;
+      }
+      [stroke]:not([stroke~='none']) {
+        stroke: currentColor;
+      }
     }
   }
 
@@ -118,11 +122,11 @@
 
     position: absolute;
     right: 0;
-    
+
     max-height: 175px;
     padding: 0.5rem;
     overflow: auto;
-    
+
     border-radius: 1rem;
     background: #20242a;
 
@@ -135,15 +139,15 @@
 
       display: flex;
       align-items: center;
-      padding: .6rem .75rem;
-      gap: .5rem;
-      
+      padding: 0.6rem 0.75rem;
+      gap: 0.5rem;
+
       color: #fff;
       font-size: 1rem;
       font-weight: 500;
       border-radius: 0.5rem;
-      
-      transition: .15s ease;
+
+      transition: 0.15s ease;
       cursor: pointer;
 
       user-select: none;

@@ -1,1 +1,1 @@
-export * as url from './getLastURLSegment'
+export * as url from './getLastURLSegment';

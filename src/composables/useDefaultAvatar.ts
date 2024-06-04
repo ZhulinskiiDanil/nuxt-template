@@ -1,3 +1,3 @@
-import avatar from '~/assets/svg/user.svg'
+import avatar from '~/assets/svg/user.svg';
 
-export const useDefaultAvatar = () => avatar
+export const useDefaultAvatar = () => avatar;

@@ -1,1 +1,1 @@
-export type CheckboxType = "default"
+export type CheckboxType = 'default';

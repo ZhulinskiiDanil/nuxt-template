@@ -5,6 +5,6 @@ export function getBase64(
     const reader = new FileReader();
     reader.readAsDataURL(file as Blob);
     reader.onload = () => resolve(reader.result);
-    reader.onerror = error => reject(error);
+    reader.onerror = (error) => reject(error);
   });
 }

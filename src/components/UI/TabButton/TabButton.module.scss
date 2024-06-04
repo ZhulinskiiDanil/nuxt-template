@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: .62rem;
+  padding: 0.62rem;
   min-width: max-content;
 
   color: #8d97a6;
@@ -13,7 +13,7 @@
   font-weight: 700;
   font-size: 1.25rem;
   line-height: 110%;
-  transition: .3s ease;
+  transition: 0.3s ease;
   cursor: pointer;
 
   &.active {

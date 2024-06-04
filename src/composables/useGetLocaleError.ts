@@ -1,7 +1,6 @@
 export function useGetLocaleError() {
-  const { t } = useI18n()
+  const { t } = useI18n();
 
-  return (key: string, errorCode: string) => (
-    t(`errors.${key}.${errorCode}`)
-  )
+  return (key: string, errorCode: string) =>
+    t(`errors.${key}.${errorCode}`);
 }

@@ -1,4 +1,4 @@
-import path from "path";
+import path from 'path';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -15,9 +15,17 @@ export default defineNuxtConfig({
   },
   srcDir: './src/',
   ssr: false,
-  css: [
-    '~/assets/styles/globals.scss'
-  ],
+  css: ['~/assets/styles/globals.scss'],
+  components: {
+    dirs: [
+      {
+        path: '~/components/SVG',
+        global: true,
+        prefix: 'SVG'
+      },
+      '~/components'
+    ]
+  },
   app: {
     head: {
       link: [
@@ -26,7 +34,7 @@ export default defineNuxtConfig({
           href: '/fonts/RobotoFlex/RobotoFlex[GRAD,XOPQ,XTRA,YOPQ,YTAS,YTDE,YTFI,YTLC,YTUC,opsz,slnt,wdth,wght].woff2',
           as: 'font',
           type: 'font/woff2',
-          crossorigin: "anonymous"
+          crossorigin: 'anonymous'
         }
       ]
     }
@@ -34,14 +42,18 @@ export default defineNuxtConfig({
   vite: {
     resolve: {
       alias: {
-        "@": path.resolve(__dirname, "./src"),
-        "@request": path.resolve(__dirname, "./src/common/request.ts")
+        '@': path.resolve(__dirname, './src'),
+        '@request': path.resolve(
+          __dirname,
+          './src/common/request.ts'
+        )
       }
     },
     css: {
       preprocessorOptions: {
         scss: {
-          additionalData: "@import '~/assets/styles/_vars.scss';\n"
+          additionalData:
+            "@import '~/assets/styles/_vars.scss';\n"
         }
       },
       modules: {
@@ -49,12 +61,8 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: [
-    '@nuxtjs/i18n'
-  ],
-  plugins: [
-    '~/plugins/maska.ts'
-  ],
+  modules: ['@nuxtjs/i18n'],
+  plugins: ['~/plugins/maska.ts'],
   i18n: {
     vueI18n: './i18n.config.ts',
     defaultLocale: 'ru',
@@ -73,4 +81,4 @@ export default defineNuxtConfig({
       }
     ]
   }
-})
+});

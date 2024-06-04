@@ -1,4 +1,4 @@
-@import "./scss/Textarea.default.scss";
+@import './scss/Textarea.default.scss';
 
 .textarea {
   border: none;
@@ -7,15 +7,15 @@
 
   padding: 0.75rem 1rem;
 
-  font-size: .9rem;
+  font-size: 0.9rem;
   font-style: normal;
   font-weight: 400;
   line-height: 120%;
   user-select: none;
   border-radius: 0;
-  transition: .15s ease;
+  transition: 0.15s ease;
   transition-property: background, color, box-shadow;
-  
+
   &.fill {
     width: 100%;
   }

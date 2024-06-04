@@ -1,5 +1,5 @@
 export type AuthWrapperTitleProps = {
-  title?: string
-  titleCentered?: boolean
-  steps?: { current: number, max: number }
-}
+  title?: string;
+  titleCentered?: boolean;
+  steps?: { current: number; max: number };
+};

@@ -23,14 +23,14 @@
 
     .inner {
       padding: 1.5rem;
-      background: #282D35;
+      background: #282d35;
     }
 
     .footer {
       width: 100%;
       padding: 1.5rem;
       background: #20242a;
-      transition: .4s ease;
+      transition: 0.4s ease;
     }
   }
 
@@ -49,7 +49,7 @@
       line-height: 110%;
       color: #8d97a6;
 
-      &[data-link~=true] {
+      &[data-link~='true'] {
         text-decoration: underline;
         color: #ff1469;
         cursor: pointer;

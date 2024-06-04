@@ -4,18 +4,26 @@ button.button.safe {
     color: $buttonSafeText;
     background: $buttonSafeBg;
 
-    &:has(svg) { background: $buttonSafeBg; }
+    &:has(svg) {
+      background: $buttonSafeBg;
+    }
 
     &:hover,
-    &.hovered { background: $buttonSafeBgHover; }
+    &.hovered {
+      background: $buttonSafeBgHover;
+    }
 
     &:focus,
-    &.focused { background: $buttonSafeBgFocus; }
+    &.focused {
+      background: $buttonSafeBgFocus;
+    }
 
     &:active,
-    &.pressed { background: $buttonSafeBgPressed; }
+    &.pressed {
+      background: $buttonSafeBgPressed;
+    }
   }
-  
+
   &:disabled,
   &.disabled,
   &[data-disabled] {

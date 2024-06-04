@@ -16,13 +16,17 @@
 </template>
 
 <script setup lang="ts">
-  defineEmits<{ signOut: [] }>()
-  defineProps<{
-    avatarURL?: string
-    username?: string
-  }>()
+defineEmits<{ signOut: [] }>();
+defineProps<{
+  avatarURL?: string;
+  username?: string;
+}>();
 
-  const defaultAvatar = useDefaultAvatar()
+const defaultAvatar = useDefaultAvatar();
 </script>
 
-<style lang="scss" src="./ProfileCard.module.scss" module></style>
+<style
+  lang="scss"
+  src="./ProfileCard.module.scss"
+  module
+></style>

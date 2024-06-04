@@ -8,7 +8,7 @@
 </template>
 
 <script setup lang="ts">
-  defineProps<{ amount?: number }>()
+defineProps<{ amount?: number }>();
 </script>
 
 <style lang="scss" src="./Coins.module.scss" module></style>

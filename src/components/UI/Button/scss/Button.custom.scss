@@ -4,18 +4,26 @@ button.button.custom {
     color: $buttonCustomText;
     background: $buttonCustomBg;
 
-    &:has(svg) { background: $buttonCustomBg; }
+    &:has(svg) {
+      background: $buttonCustomBg;
+    }
 
     &:hover,
-    &.hovered { background: $buttonCustomBgHover; }
+    &.hovered {
+      background: $buttonCustomBgHover;
+    }
 
     &:focus,
-    &.focused { background: $buttonCustomBgFocus; }
+    &.focused {
+      background: $buttonCustomBgFocus;
+    }
 
     &:active,
-    &.pressed { background: $buttonCustomBgPressed; }
+    &.pressed {
+      background: $buttonCustomBgPressed;
+    }
   }
-  
+
   &:disabled,
   &.disabled,
   &[data-disabled] {

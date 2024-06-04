@@ -21,10 +21,10 @@
     user-select: none;
     -webkit-user-drag: none;
   }
-  
+
   .description {
     margin-top: 1rem;
-    
+
     font-weight: 400;
     font-size: 1rem;
     line-height: 110%;
@@ -34,26 +34,26 @@
       text-align: center;
     }
   }
-  
+
   &:not(:has(.description + .form)) {
     .form {
       margin-top: 2rem;
     }
   }
-  
+
   .form {
     width: 100%;
-  
+
     .error {
       padding: 1.5rem;
       color: red;
     }
   }
-  
+
   .additionalButton {
     margin-top: 1.5rem;
   }
-  
+
   .checkbox {
     margin-top: 2rem;
   }

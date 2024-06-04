@@ -17,26 +17,26 @@
 
     .item {
       border-radius: 1rem;
-      background: #20242A;
-      transition: .15s ease;
+      background: #20242a;
+      transition: 0.15s ease;
       cursor: pointer;
-  
+
       &:hover {
-        opacity: .9;
+        opacity: 0.9;
       }
-  
+
       &:focus {
         .head {
           .arrow {
             transform: rotate(-180deg);
           }
         }
-  
+
         .text {
           display: block;
         }
       }
-  
+
       .head {
         display: flex;
         padding: 1.875rem 1.25rem;
@@ -45,7 +45,7 @@
         align-self: stretch;
         user-select: none;
         -webkit-user-drag: none;
-  
+
         span {
           font-size: 1.5rem;
           font-weight: 500;
@@ -53,16 +53,16 @@
           font-stretch: 120%;
           color: #fff;
         }
-  
+
         .arrow {
           width: 1.75rem;
           height: 1.75rem;
         }
       }
-  
+
       .text {
         padding: 0 1.25rem 1.5rem;
-  
+
         font-weight: 400;
         font-size: 1.25rem;
         line-height: 110%;
@@ -94,7 +94,7 @@
         }
 
         .text {
-          font-size: .88rem;
+          font-size: 0.88rem;
         }
       }
     }

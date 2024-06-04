@@ -1,2 +1,2 @@
-export * from './useTimestamp'
-export * from './useMatchMedia'
+export * from './useTimestamp';
+export * from './useMatchMedia';

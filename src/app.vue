@@ -8,14 +8,14 @@
 </template>
 
 <script setup lang="ts">
-  const { loadProfile } = useProfile()
+const { loadProfile } = useProfile();
 
-  onMounted(loadProfile)
+onMounted(loadProfile);
 </script>
 
 <style lang="scss" module>
-  .page {
-    z-index: 0;
-    position: relative;
-  }
+.page {
+  z-index: 0;
+  position: relative;
+}
 </style>

@@ -28,18 +28,22 @@
 </template>
 
 <script setup lang="ts">
-  const { theme, setTheme } = useTheme()
-  const localePath = useLocalePath()
-  const props = defineProps<{
-    title?: string
-    additional?: string
-    error?: string | null
-    description?: string | null
-    link?: {
-      href: string
-      name: string
-    }
-  }>()
+const { theme, setTheme } = useTheme();
+const localePath = useLocalePath();
+const props = defineProps<{
+  title?: string;
+  additional?: string;
+  error?: string | null;
+  description?: string | null;
+  link?: {
+    href: string;
+    name: string;
+  };
+}>();
 </script>
 
-<style lang="scss" src="./InputWrapper.module.scss" module></style>
+<style
+  lang="scss"
+  src="./InputWrapper.module.scss"
+  module
+></style>

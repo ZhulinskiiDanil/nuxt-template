@@ -2,9 +2,7 @@
   <footer :class="$style.footer">
     <div :class="$style.cw">
       <div :class="$style.flex">
-        <NuxtLink :to="localePath('/')">
-          LOGO
-        </NuxtLink>
+        <NuxtLink :to="localePath('/')">LOGO</NuxtLink>
         <div :class="$style.linksWrapper">
           <div
             v-for="linkList in linkLists"
@@ -26,10 +24,7 @@
             </ul>
           </div>
         </div>
-        <UIButton
-          :class="$style.button"
-          uppercase
-        >
+        <UIButton :class="$style.button" uppercase>
           {{ $t('main.contactSupport') }}
         </UIButton>
       </div>
@@ -38,10 +33,10 @@
           © NUXT-CORE, {{ new Date().getFullYear() }}
         </p>
         <div data-animated :class="$style.social">
-          <SVGDiscord   :class="$style.icon" />
-          <SVGTelegram  :class="$style.icon" />
-          <SVGVK        :class="$style.icon" />
-          <SVGYouTube   :class="$style.icon" />
+          <SVGDiscord :class="$style.icon" />
+          <SVGTelegram :class="$style.icon" />
+          <SVGVK :class="$style.icon" />
+          <SVGYouTube :class="$style.icon" />
         </div>
       </div>
     </div>
@@ -49,18 +44,20 @@
 </template>
 
 <script setup lang="ts">
-  interface ILink {
-    href: string,
-    name: string
-  }
+interface ILink {
+  href: string;
+  name: string;
+}
 
-  const { tm } = useI18n()
-  const localePath = useLocalePath()
-  
-  const linkLists = computed<{
-    name: string,
-    links: ILink[]
-  }[]>(() => tm('footer.linkLists') || [])
+const { tm } = useI18n();
+const localePath = useLocalePath();
+
+const linkLists = computed<
+  {
+    name: string;
+    links: ILink[];
+  }[]
+>(() => tm('footer.linkLists') || []);
 </script>
 
 <style lang="scss" src="./Footer.module.scss" module></style>

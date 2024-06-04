@@ -1,14 +1,14 @@
 // Guards
-import { authMiddleware } from "./guards"
+import { authMiddleware } from './guards';
 
 const middlewares = {
   auth: authMiddleware
-}
+};
 
-export type GuardType = keyof typeof middlewares
+export type GuardType = keyof typeof middlewares;
 export function Guard(guardType: GuardType) {
-  const defaultMiddleware = defineNuxtRouteMiddleware(() => {})
+  const defaultMiddleware = defineNuxtRouteMiddleware(() => {});
 
-  const middleware = middlewares[guardType]
-  return middleware || defaultMiddleware
+  const middleware = middlewares[guardType];
+  return middleware || defaultMiddleware;
 }

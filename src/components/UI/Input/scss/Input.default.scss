@@ -54,7 +54,7 @@ label.label.default {
       &::placeholder {
         color: $inputDefaultPlaceholderHover;
       }
-  
+
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px $bgHover inset;
         -webkit-text-fill-color: $inputDefaultTextHover;
@@ -76,7 +76,7 @@ label.label.default {
       &::placeholder {
         color: $inputDefaultPlaceholderPressed;
       }
-  
+
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px $bgPressed inset;
         -webkit-text-fill-color: $inputDefaultTextPressed;
@@ -97,7 +97,7 @@ label.label.default {
       &::placeholder {
         color: $inputDefaultPlaceholderDone;
       }
-  
+
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px $bgDone inset;
         -webkit-text-fill-color: $inputDefaultTextDone;
@@ -118,7 +118,7 @@ label.label.default {
       &::placeholder {
         color: $inputDefaultPlaceholderDisabled;
       }
-  
+
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px $bgWrong inset;
         -webkit-text-fill-color: $inputDefaultTextDisabled;
@@ -140,7 +140,7 @@ label.label.default {
       &::placeholder {
         color: $inputDefaultPlaceholderWrong;
       }
-  
+
       &:-webkit-autofill {
         -webkit-box-shadow: 0 0 0px 1000px $bgWrong inset;
         -webkit-text-fill-color: $inputDefaultTextWrong;

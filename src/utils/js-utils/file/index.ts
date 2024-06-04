@@ -1,1 +1,1 @@
-export * from './getBase64'
+export * from './getBase64';

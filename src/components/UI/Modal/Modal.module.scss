@@ -11,7 +11,7 @@
   height: 100dvh;
   opacity: 0;
   visibility: hidden;
-  transition: .3s ease;
+  transition: 0.3s ease;
   transition-property: opacity, visibility;
 
   &.active {
@@ -34,7 +34,7 @@
     top: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .25);
+    background: rgba(0, 0, 0, 0.25);
     will-change: backdrop-filter;
   }
 
@@ -55,8 +55,8 @@
       background: #282d35;
 
       opacity: 0;
-      transform: scale(.8) translate3d(0, 30vh, 0);
-      transition: .35s cubic-bezier(.63, -0.25, 0, 1);
+      transform: scale(0.8) translate3d(0, 30vh, 0);
+      transition: 0.35s cubic-bezier(0.63, -0.25, 0, 1);
       transition-property: transform, opacity;
     }
   }

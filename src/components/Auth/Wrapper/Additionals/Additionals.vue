@@ -3,10 +3,7 @@
     v-if="additionals && additionals.length > 0"
     :class="$style.additionals"
   >
-    <div
-      v-for="additional in additionals"
-      :class="$style.item"
-    >
+    <div v-for="additional in additionals" :class="$style.item">
       <span :class="$style.item__title">
         {{ additional.title }}
       </span>
@@ -29,9 +26,13 @@
 </template>
 
 <script setup lang="ts">
-  import type { AuthWrapperAdditionalsProps } from './types'
+import type { AuthWrapperAdditionalsProps } from './types';
 
-  defineProps<AuthWrapperAdditionalsProps>()
+defineProps<AuthWrapperAdditionalsProps>();
 </script>
 
-<style lang="scss" src="./Additionals.module.scss" module></style>
+<style
+  lang="scss"
+  src="./Additionals.module.scss"
+  module
+></style>

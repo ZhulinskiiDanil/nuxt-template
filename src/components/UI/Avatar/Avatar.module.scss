@@ -23,7 +23,7 @@
     height: 100%;
     background: rgba(0, 0, 0, 0.14);
     opacity: 0;
-    transition: .15s ease;
+    transition: 0.15s ease;
   }
 
   .pen {
@@ -37,16 +37,22 @@
 
     opacity: 0;
     color: currentColor;
-    transition: .15s ease;
+    transition: 0.15s ease;
     pointer-events: none;
 
-    * { color: currentColor }
-    [fill]:not([fill~=none]) { fill: currentColor }
-    [stroke]:not([stroke~=none]) { stroke: currentColor }
+    * {
+      color: currentColor;
+    }
+    [fill]:not([fill~='none']) {
+      fill: currentColor;
+    }
+    [stroke]:not([stroke~='none']) {
+      stroke: currentColor;
+    }
   }
 
   &:active {
-    color: #FF1469;
+    color: #ff1469;
   }
 
   &.canEdit:hover {

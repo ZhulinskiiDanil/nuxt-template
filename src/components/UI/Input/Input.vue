@@ -18,6 +18,8 @@
         {{ error }}
       </div>
       <input
+        v-model="model"
+        v-maska
         :name="name"
         :autocomplete="autocomplete"
         :type="
@@ -29,8 +31,6 @@
         "
         :placeholder="placeholder || 'Placeholder'"
         :readonly="readonly"
-        v-maska
-        v-model="model"
         :data-maska="dataMask"
         :data-maska-tokens="dataMaskaTokens"
         :data-maska-eager="dataMaskaEager"
@@ -38,13 +38,13 @@
     </div>
     <SVGEyeClosed
       v-if="isHidden && isPassword"
-      @click="toggleEye"
       :class="[$style.icon, $style.eye]"
+      @click="toggleEye"
     />
     <SVGEye
       v-else-if="isPassword"
-      @click="toggleEye"
       :class="[$style.icon, $style.eye]"
+      @click="toggleEye"
     />
     <div v-if="after" :class="$style.after">
       {{ after }}
@@ -80,11 +80,11 @@ type Props = {
   readonly?: InputHTMLAttributes['readonly'];
 };
 
-const model = defineModel();
-const emit = defineEmits<{
+defineEmits<{
   buttonClick: [];
   copy: [text: string];
 }>();
+const model = defineModel<string>();
 const props = defineProps<Props>();
 
 const isPassword = computed(() => props?.type === 'password');

@@ -20,7 +20,10 @@ export function useNotification(
   };
 }
 
-function onMessage(message: NotificationMessage, data?: any) {
+function onMessage(
+  message: NotificationMessage,
+  data?: unknown
+) {
   handlers.forEach((handler) => {
     const isHandlerByMessageType =
       handler.type && message.type === handler.type;
@@ -36,7 +39,7 @@ function onMessage(message: NotificationMessage, data?: any) {
 type PushOptions = {
   title?: string;
   content: string;
-  data?: any;
+  data?: unknown;
 };
 
 function push(options: PushOptions, type: string | null = null) {

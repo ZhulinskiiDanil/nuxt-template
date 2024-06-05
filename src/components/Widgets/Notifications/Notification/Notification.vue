@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 defineSlots<{
-  icon(props: any): any;
+  icon(): void;
 }>();
 defineProps<{
   title?: string;

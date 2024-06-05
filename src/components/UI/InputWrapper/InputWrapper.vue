@@ -28,9 +28,7 @@
 </template>
 
 <script setup lang="ts">
-const { theme, setTheme } = useTheme();
-const localePath = useLocalePath();
-const props = defineProps<{
+defineProps<{
   title?: string;
   additional?: string;
   error?: string | null;
@@ -40,6 +38,9 @@ const props = defineProps<{
     name: string;
   };
 }>();
+
+const { theme } = useTheme();
+const localePath = useLocalePath();
 </script>
 
 <style

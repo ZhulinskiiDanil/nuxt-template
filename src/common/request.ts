@@ -1,6 +1,6 @@
 type FetchOptions = Parameters<typeof $fetch>['1'];
 
-export const request = async <T = any>(
+export const request = async <T = unknown>(
   path: string,
   opts: FetchOptions
 ): Promise<T | null> => {

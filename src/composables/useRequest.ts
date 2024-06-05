@@ -1,5 +1,5 @@
 import { request } from '@request';
 
-export function useRequest(options?: UseRequestOptions) {
+export function useRequest() {
   return request;
 }

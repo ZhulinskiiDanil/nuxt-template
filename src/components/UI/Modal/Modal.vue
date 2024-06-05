@@ -8,8 +8,8 @@
       ]"
     >
       <div
-        @click.prevent="$emit('hide')"
         :class="$style.overlay"
+        @click.prevent="$emit('hide')"
       ></div>
       <div :class="$style.contentWrapper">
         <div :class="[$style.content, contentClassName]">

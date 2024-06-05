@@ -3,7 +3,11 @@
     v-if="additionals && additionals.length > 0"
     :class="$style.additionals"
   >
-    <div v-for="additional in additionals" :class="$style.item">
+    <div
+      v-for="additional in additionals"
+      :key="additional.title"
+      :class="$style.item"
+    >
       <span :class="$style.item__title">
         {{ additional.title }}
       </span>
@@ -16,8 +20,8 @@
       </NuxtLink>
       <span
         v-if="additional.id && additional.fn"
-        @click="$emit('fn', additional.id)"
         :class="$style.item__fn"
+        @click="additional.id && $emit('fn', additional.id)"
       >
         {{ additional.fn }}
       </span>
@@ -29,6 +33,9 @@
 import type { AuthWrapperAdditionalsProps } from './types';
 
 defineProps<AuthWrapperAdditionalsProps>();
+defineEmits<{ fn: [id: string | number] }>();
+
+const localePath = useLocalePath();
 </script>
 
 <style

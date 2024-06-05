@@ -3,10 +3,10 @@
     <div :class="$style.list">
       <WidgetsNotificationsNotification
         v-for="notification in notifications.slice(-2)"
+        :key="notification.id"
         :title="notification.title || ''"
         :content="notification.content"
         :error="!!notification.error"
-        :key="notification.id"
       >
         <template #icon>
           <SVGBlocked v-if="notification.error" />

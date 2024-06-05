@@ -8,9 +8,9 @@
   >
     <div :class="$style.input">
       <input
+        v-model="model"
         type="checkbox"
         :disabled="disabled"
-        v-model="model"
       />
       <SVGStar :class="$style.icon" />
     </div>
@@ -25,8 +25,7 @@ import { uiConfig } from '../ui.config';
 import type { UIKitElementTheme } from '../types';
 import type { CheckboxType } from './types';
 
-const model = defineModel();
-const slots = defineSlots();
+const model = defineModel<boolean>();
 const props = defineProps<{
   type?: CheckboxType;
   theme?: UIKitElementTheme;

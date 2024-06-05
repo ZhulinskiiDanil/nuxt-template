@@ -16,74 +16,74 @@
 </template>
 
 <script setup lang="ts">
-import { useVuelidate } from '@vuelidate/core';
-import {
-  helpers,
-  minLength,
-  maxLength,
-  required,
-  sameAs
-} from '@vuelidate/validators';
+// import { useVuelidate } from '@vuelidate/core';
+// import {
+//   helpers,
+//   minLength,
+//   maxLength,
+//   required,
+//   sameAs
+// } from '@vuelidate/validators';
 
-const data = reactive({
-  login: '',
-  password: '',
-  checkbox: false,
-  switcher: false,
-  modal: false,
-  existingModal: false,
-  testMask: ''
-});
+// const data = reactive({
+//   login: '',
+//   password: '',
+//   checkbox: false,
+//   switcher: false,
+//   modal: false,
+//   existingModal: false,
+//   testMask: ''
+// });
 
-const rules = computed(() => ({
-  login: {
-    minLength: helpers.withMessage(
-      'Минимальная длина логина 3 символа',
-      minLength(3)
-    ),
-    maxLength: helpers.withMessage(
-      'Максимальная длина логина 32 символа',
-      maxLength(32)
-    ),
-    required: helpers.withMessage('Обязательное поле', required)
-  },
-  password: {
-    minLength: helpers.withMessage(
-      'Минимальная длина пароля 8 символов',
-      minLength(8)
-    ),
-    maxLength: helpers.withMessage(
-      'Максимальная длина пароля 64 символа',
-      maxLength(64)
-    ),
-    required: helpers.withMessage('Обязательное поле', required)
-  },
-  checkbox: {
-    sameAs: helpers.withMessage(
-      'Согласитесь с правилами использования',
-      sameAs(true)
-    )
-  },
-  switcher: {
-    sameAs: helpers.withMessage(
-      'Включите этот переключатель',
-      sameAs(true)
-    )
-  },
-  testMask: {
-    required: helpers.withMessage(
-      'Номер телефона обязателен',
-      required
-    )
-  }
-}));
-const v$ = useVuelidate(rules, {
-  login: toRef(data.login),
-  password: toRef(data.password),
-  checkbox: toRef(data.checkbox),
-  switcher: toRef(data.switcher),
-  testMask: toRef(data.testMask)
-});
+// const rules = computed(() => ({
+//   login: {
+//     minLength: helpers.withMessage(
+//       'Минимальная длина логина 3 символа',
+//       minLength(3)
+//     ),
+//     maxLength: helpers.withMessage(
+//       'Максимальная длина логина 32 символа',
+//       maxLength(32)
+//     ),
+//     required: helpers.withMessage('Обязательное поле', required)
+//   },
+//   password: {
+//     minLength: helpers.withMessage(
+//       'Минимальная длина пароля 8 символов',
+//       minLength(8)
+//     ),
+//     maxLength: helpers.withMessage(
+//       'Максимальная длина пароля 64 символа',
+//       maxLength(64)
+//     ),
+//     required: helpers.withMessage('Обязательное поле', required)
+//   },
+//   checkbox: {
+//     sameAs: helpers.withMessage(
+//       'Согласитесь с правилами использования',
+//       sameAs(true)
+//     )
+//   },
+//   switcher: {
+//     sameAs: helpers.withMessage(
+//       'Включите этот переключатель',
+//       sameAs(true)
+//     )
+//   },
+//   testMask: {
+//     required: helpers.withMessage(
+//       'Номер телефона обязателен',
+//       required
+//     )
+//   }
+// }));
+// const v$ = useVuelidate(rules, {
+//   login: toRef(data.login),
+//   password: toRef(data.password),
+//   checkbox: toRef(data.checkbox),
+//   switcher: toRef(data.switcher),
+//   testMask: toRef(data.testMask)
+// });
 
 definePageMeta({ layout: 'empty' });
 </script>

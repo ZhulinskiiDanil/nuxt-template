@@ -1,4 +1,4 @@
-import { defineNuxtConfig } from 'nuxt/config';
+import type { defineNuxtConfig } from 'nuxt/config';
 
 export type NuxtUIConfig = Parameters<
   typeof defineNuxtConfig

@@ -1,7 +1,6 @@
 <template>
   <div
     ref="parentRef"
-    @click="toggle"
     :class="[
       $style.default,
       $style.langDtopdown,
@@ -9,6 +8,7 @@
       isLeft && $style.isLeft,
       $style[`dropTo__${dropTo}`]
     ]"
+    @click="toggle"
   >
     <div :class="$style.selected">
       <img
@@ -22,9 +22,10 @@
       <NuxtLink
         v-for="locale in ($i18n as any)
           .locales as LocaleObject[]"
+        :key="locale.code"
         :to="localePath($route.fullPath, locale.code)"
       >
-        <div :class="$style.option" :key="locale.code">
+        <div :key="locale.code" :class="$style.option">
           <img
             :alt="locale.code"
             :src="localeImages[locale.code]"

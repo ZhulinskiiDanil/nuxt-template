@@ -2,12 +2,12 @@
   <AuthWrapper
     title="Готово!"
     description="Мы выслали вам на почту новый пароль. Вы можете его поменять в личном кабинете"
-    titleCentered
-    descriptionCentered
+    title-centered
+    description-centered
   >
     <AuthFormWrapper
-      submitTitle="Авторизоваться"
-      :submitLink="localePath('/auth/sign-in')"
+      submit-title="Авторизоваться"
+      :submit-link="localePath('/auth/sign-in')"
     />
   </AuthWrapper>
 </template>

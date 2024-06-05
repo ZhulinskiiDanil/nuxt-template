@@ -5,15 +5,15 @@
 </template>
 
 <script setup lang="ts">
-const { theme } = useTheme();
-const { profile, isLoading: isProfileLoading } = useProfile();
+// const { theme } = useTheme();
+// const { profile, isLoading: isProfileLoading } = useProfile();
 
-async function signOut() {
-  // const response = await $api.auth.signOut()
-  // if (response) {
-  //   await navigateTo(localePath('/'), { external: true })
-  // }
-}
+// async function signOut() {
+//   // const response = await $api.auth.signOut()
+//   // if (response) {
+//   //   await navigateTo(localePath('/'), { external: true })
+//   // }
+// }
 </script>
 
 <style lang="scss" src="./Header.module.scss" module></style>

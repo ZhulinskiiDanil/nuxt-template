@@ -7,5 +7,5 @@ export type NotificationMessage = {
 
 export type MessageHandler = {
   type: string | null;
-  fn: (msg: NotificationMessage, data?: any) => void;
+  fn: (msg: NotificationMessage, data?: unknown) => void;
 };

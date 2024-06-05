@@ -18,10 +18,11 @@
     >
       <NuxtLink
         v-for="elm of footerText"
+        :key="elm.text"
         :to="elm.linkHref ? elm.linkHref : ''"
         :data-link="!!elm?.linkHref || !!elm?.fnId"
-        @click="() => elm?.fnId && $emit('fn', elm.fnId)"
         :class="$style.text"
+        @click="() => elm?.fnId && $emit('fn', elm.fnId)"
       >
         {{ elm.text }}
       </NuxtLink>

@@ -1,4 +1,6 @@
 <template>
-  <WidgetsNotifications />
-  <slot></slot>
+  <div>
+    <WidgetsNotifications />
+    <slot></slot>
+  </div>
 </template>

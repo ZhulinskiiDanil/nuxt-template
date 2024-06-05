@@ -61,7 +61,7 @@ export default defineNuxtConfig({
       }
     }
   },
-  modules: ['@nuxtjs/i18n'],
+  modules: ['@nuxtjs/i18n', '@nuxt/eslint'],
   plugins: ['~/plugins/maska.ts'],
   i18n: {
     vueI18n: './i18n.config.ts',

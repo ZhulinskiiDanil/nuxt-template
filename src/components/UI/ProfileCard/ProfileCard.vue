@@ -9,8 +9,8 @@
       {{ username || 'Загрузка' }}
     </div>
     <SVGSignOut
-      @click.prevent="$emit('signOut')"
       :class="$style.icon"
+      @click.prevent="$emit('signOut')"
     />
   </div>
 </template>

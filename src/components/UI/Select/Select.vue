@@ -1,11 +1,11 @@
 <template>
   <div
-    @click="toggle"
     :class="[
       $style.select,
       $style.default,
       isActive && options?.length && $style.active
     ]"
+    @click="toggle"
   >
     <div :class="$style.selected">
       <span>
@@ -16,12 +16,12 @@
     <div :class="$style.list">
       <div
         v-for="option in options"
-        @click.stop="setOption(option)"
         :key="option.value"
         :class="[
           $style.option,
           activeOption.value === option.value && $style.active
         ]"
+        @click.stop="setOption(option)"
       >
         {{ option.text }}
       </div>

@@ -1,21 +1,25 @@
 <template>
-  <UIModal @hide="$emit('hide')" :visible="visible">
+  <UIModal :visible="visible" @hide="$emit('hide')">
     <div :class="$style.modal">
       <ModalAssetsTitle center>
         {{ title || 'Уведомление' }}
       </ModalAssetsTitle>
       <div :class="$style.body">
-        <span v-for="text in body" :data-type="text.type">
+        <span
+          v-for="text in body"
+          :key="text.content"
+          :data-type="text.type"
+        >
           {{ text.content }}&nbsp;
         </span>
       </div>
       <div :class="$style.buttons">
-        <UIButton fill type="stroked" @click="submit">
+        <UIButton fill type="stroked" @click="$emit('hide')">
           {{ submitTitle || 'Ок' }}
         </UIButton>
         <NuxtLink
-          :class="$style.link"
           v-if="link?.name && link?.href"
+          :class="$style.link"
           :to="localePath(link.href)"
           target="_blank"
         >
@@ -29,8 +33,8 @@
 </template>
 
 <script setup lang="ts">
-const emit = defineEmits<{ hide: [] }>();
-const props = defineProps<{
+defineEmits<{ hide: [] }>();
+defineProps<{
   visible?: boolean;
   title?: string;
   submitTitle?: string;
@@ -42,10 +46,6 @@ const props = defineProps<{
 }>();
 
 const localePath = useLocalePath();
-
-function submit() {
-  emit('hide');
-}
 </script>
 
 <style lang="scss" src="./Alert.module.scss" module></style>

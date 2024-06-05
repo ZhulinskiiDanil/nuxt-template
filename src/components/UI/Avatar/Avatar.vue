@@ -10,9 +10,9 @@
     <input
       v-if="canEdit && !disabled"
       type="file"
-      @change="$emit('change', $event)"
       accept=".png, .jpg, .jpeg"
       hidden
+      @change="$emit('change', $event)"
     />
   </label>
 </template>

@@ -55,12 +55,12 @@
         </i>
       </span>
       <UIInput
+        v-model="v$.login.$model"
         placeholder="Введите логин"
         name="new-password"
         autocomplete="new-password"
         :wrong="v$.login.$error"
         :error="v$.login.$errors[0]?.$message || ''"
-        v-model="v$.login.$model"
         after="after text"
       >
         <template #before-icon>
@@ -74,12 +74,12 @@
         {{ error.$message }}
       </div>
       <UIInput
+        v-model="v$.password.$model"
         type="password"
         placeholder="Введите пароль"
         name="new-password"
         autocomplete="new-password"
         :wrong="v$.password.$error"
-        v-model="v$.password.$model"
       />
       <div
         v-for="error of v$.password.$errors"
@@ -96,12 +96,12 @@
         :error="v$.login.$errors[0]?.$message.toString() || null"
       >
         <UITextarea
+          v-model="v$.login.$model"
           :class="$style.textarea"
           placeholder="Введите логин"
           name="new-password"
           autocomplete="new-password"
           :wrong="v$.login.$error"
-          v-model="v$.login.$model"
         />
       </UIInputWrapper>
       <UIInputWrapper
@@ -109,13 +109,13 @@
         :error="v$.login.$errors[0]?.$message.toString() || null"
       >
         <UITextarea
+          v-model="v$.password.$model"
           :class="$style.textarea"
           type="password"
           placeholder="Введите пароль"
           name="new-password"
           autocomplete="new-password"
           :wrong="v$.password.$error"
-          v-model="v$.password.$model"
         />
       </UIInputWrapper>
     </div>
@@ -127,11 +127,11 @@
         :error="v$.login.$errors[0]?.$message.toString() || null"
       >
         <UIInput
+          v-model="v$.login.$model"
           placeholder="Введите логин"
           name="new-password"
           autocomplete="new-password"
           :wrong="v$.login.$error"
-          v-model="v$.login.$model"
         />
       </UIInputWrapper>
       <UIInputWrapper
@@ -141,12 +141,12 @@
         "
       >
         <UIInput
+          v-model="v$.password.$model"
           type="password"
           placeholder="Введите пароль"
           name="new-password"
           autocomplete="new-password"
           :wrong="v$.password.$error"
-          v-model="v$.password.$model"
         />
       </UIInputWrapper>
       <p :class="$style.description">
@@ -169,8 +169,8 @@
         </i>
       </span>
       <UICheckbox
-        title="Я соглашаюсь с правилами использования"
         v-model="v$.checkbox.$model"
+        title="Я соглашаюсь с правилами использования"
       />
       <div
         v-for="error of v$.checkbox.$errors"
@@ -185,9 +185,9 @@
       <!-- https://beholdr.github.io/maska/#/ -->
       <!-- v-maska not required -->
       <UIInput
+        v-model="v$.testMask.$model"
         type="text"
         data-mask="+380-##-###-####"
-        v-model="v$.testMask.$model"
       />
       <span>
         <i>
@@ -205,7 +205,7 @@
 
     <!-- ! ============== MODAL EXAMPLE ============== -->
     <div :class="$style.row">
-      <UIModal @hide="data.modal = false" :visible="data.modal">
+      <UIModal :visible="data.modal" @hide="data.modal = false">
         <div style="padding: 2rem">
           <h2>
             {{ $t('helloWorld') }}
@@ -216,8 +216,8 @@
           <div style="display: flex">
             <UIButton
               fill
-              @click="data.modal = false"
               type="stroked"
+              @click="data.modal = false"
             >
               Закрыть
             </UIButton>
@@ -228,14 +228,14 @@
         :visible="data.existingModal"
         @hide="data.existingModal = false"
       />
-      <UIButton @click="data.modal = true" type="gray">
+      <UIButton type="gray" @click="data.modal = true">
         {{
           data.modal
             ? 'Модальное окно открыто'
             : 'Открыть модальное окно'
         }}
       </UIButton>
-      <UIButton @click="data.existingModal = true" type="gray">
+      <UIButton type="gray" @click="data.existingModal = true">
         {{
           data.existingModal
             ? 'Существующее модальное окно открыто'

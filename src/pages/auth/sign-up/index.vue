@@ -1,22 +1,23 @@
 <template>
   <AuthWrapper
+    v-model:checkbox="haveInviteCode"
     :title="
       (step === 3 && 'Введите капчу') ||
       (step === 4 && 'Добро пожаловать!')
     "
-    :titleCentered="step === 4"
-    :descriptionCentered="step === 4"
+    :title-centered="step === 4"
+    :description-centered="step === 4"
     :description="
       step === 4 &&
       'Добро пожаловать в мелонити! Вы успешно зарегистрировали аккаунт и теперь можете перейти в свой личный кабинет'
     "
-    :backButton="step > 0 && step < 3"
+    :back-button="step > 0 && step < 3"
     :steps="step > 0 && { current: step, max: 3 }"
-    :footerText="footerText"
-    :footerTextMaxWidth="step > 0 ? 380 : null"
-    :checkboxText="step === 0 && 'У меня есть код приглашения'"
-    :checkboxDisabled="!!$route.query?.ref"
-    :logoVisible="step === 4"
+    :footer-text="footerText"
+    :footer-text-max-width="step > 0 ? 380 : null"
+    :checkbox-text="step === 0 && 'У меня есть код приглашения'"
+    :checkbox-disabled="!!$route.query?.ref"
+    :logo-visible="step === 4"
     :tabs="
       step === 0 && [
         { name: 'Вход', href: localePath('/auth/sign-in') },
@@ -26,8 +27,7 @@
         }
       ]
     "
-    v-model:checkbox="haveInviteCode"
-    @backButtonClick="step = Math.max(--step, 0)"
+    @back-button-click="step = Math.max(--step, 0)"
     @fn="
       (fnId) => {
         if (fnId === 'CHANGE_EMAIL') step = 0;
@@ -36,16 +36,16 @@
   >
     <AuthSignUpForm
       :step="step"
-      :inviteCode="haveInviteCode ? inviteCode || null : null"
-      @nextStep="step++"
-      @prevStep="step--"
-      @setStep="(value) => (step = value)"
+      :invite-code="haveInviteCode ? inviteCode || null : null"
+      @next-step="step++"
+      @prev-step="step--"
+      @set-step="(value) => (step = value)"
       @email="(value) => (email = value)"
     />
     <template v-if="haveInviteCode && step === 0" #footer>
       <UIInput
-        fill
         v-model="inviteCode"
+        fill
         placeholder="Код"
         :readonly="!!$route.query?.ref"
       />

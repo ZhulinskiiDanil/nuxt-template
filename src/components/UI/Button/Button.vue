@@ -26,7 +26,6 @@ import { uiConfig } from '../ui.config';
 import type { UIKitElementTheme } from '../types';
 import type { ButtonVariant } from './types';
 
-const slots = defineSlots();
 const props = defineProps<{
   theme?: UIKitElementTheme;
   variant?: ButtonVariant;

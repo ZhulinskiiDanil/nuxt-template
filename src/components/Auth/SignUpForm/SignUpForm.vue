@@ -1,13 +1,12 @@
 <template>
   <AuthFormWrapper
-    @submit="submit"
-    :isEmpty="step === 4"
-    :submitTitle="
+    :is-empty="step === 4"
+    :submit-title="
       (step === 3 && 'Продолжить') ||
       (step === 4 && 'Перейти в ЛК')
     "
-    :submitLink="step === 4 && localePath('/profile')"
-    :stepButtonTitle="step < 3 && 'Продолжить'"
+    :submit-link="step === 4 && localePath('/profile')"
+    :step-button-title="step < 3 && 'Продолжить'"
     :disabled="
       [
         v$.email.$error || !email.value,
@@ -17,40 +16,41 @@
           !password.value
       ][step] || loading
     "
+    @submit="submit"
   >
     <UIInputWrapper v-if="step === 0">
       <UIInput
+        v-model="v$.email.$model"
         placeholder="Email"
         autocomplete="new-password"
-        v-model="v$.email.$model"
         :error="email.error || v$.email.$errors[0]?.$message"
       />
     </UIInputWrapper>
     <label
-      tabindex="0"
       v-if="step === 1"
+      tabindex="0"
       :class="$style.uploadAvatar"
     >
       <img alt="Avatar" :src="avatar || defaultAvatar" />
       <p>
         {{ avatar ? 'Изменить' : 'Загрузить' }}
       </p>
-      <input @change="changeAvatar" type="file" hidden />
+      <input type="file" hidden @change="changeAvatar" />
     </label>
     <UIInputWrapper v-if="step === 1">
       <UIInput
+        v-model="v$.login.$model"
         placeholder="Логин"
         autocomplete="new-password"
-        v-model="v$.login.$model"
         :error="login.error || v$.login.$errors[0]?.$message"
       />
     </UIInputWrapper>
     <UIInputWrapper v-if="step === 2">
       <UIInput
+        v-model="v$.password.$model"
         type="password"
         placeholder="Пароль"
         autocomplete="new-password"
-        v-model="v$.password.$model"
         :error="
           password.error || v$.password.$errors[0]?.$message
         "
@@ -61,10 +61,10 @@
       description="Пароль должен быть больше 8 символов"
     >
       <UIInput
+        v-model="v$.repeatPassword.$model"
         type="password"
         placeholder="Повторите пароль"
         autocomplete="new-password"
-        v-model="v$.repeatPassword.$model"
         :error="
           repeatPassword.error ||
           v$.repeatPassword.$errors[0]?.$message
@@ -78,9 +78,9 @@
     />
     <UIInputWrapper v-if="step === 3">
       <UIInput
+        v-model="v$.captcha.$model"
         placeholder="Введите капчу"
         autocomplete="new-password"
-        v-model="v$.captcha.$model"
         :error="captcha.error || v$.captcha.$errors[0]?.$message"
       />
     </UIInputWrapper>
@@ -114,8 +114,8 @@ const emit = defineEmits<{
 
 const getLocaleError = useGetLocaleError();
 
-const { t } = useI18n();
-const { loadProfile } = useProfile();
+// const { t } = useI18n();
+// const { loadProfile } = useProfile();
 const localePath = useLocalePath();
 const defaultAvatar = useDefaultAvatar();
 

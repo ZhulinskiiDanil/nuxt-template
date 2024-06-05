@@ -1,6 +1,8 @@
 export function isLink(link: string): boolean | URL {
   try {
-    return new URL(link) || false;
+    const url = new URL(link);
+
+    return url || false;
   } catch (err) {
     return false;
   }

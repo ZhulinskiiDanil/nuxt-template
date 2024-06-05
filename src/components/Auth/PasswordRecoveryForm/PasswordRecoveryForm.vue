@@ -1,8 +1,8 @@
 <template>
   <AuthFormWrapper
-    @submit="submit"
-    submitTitle="Восстановить"
+    submit-title="Восстановить"
     :disabled="v$.email.$error || !email.value || loading"
+    @submit="submit"
   >
     <UIInputWrapper
       :link="{
@@ -11,8 +11,8 @@
       }"
     >
       <UIInput
-        placeholder="Email"
         v-model="v$.email.$model"
+        placeholder="Email"
         :error="email.error || v$.email.$errors[0]?.$message"
       />
     </UIInputWrapper>
@@ -30,12 +30,12 @@ import {
 
 const getLocaleError = useGetLocaleError();
 
-const emit = defineEmits<{
+defineEmits<{
   error: [error: string | null];
 }>();
 
-const { t } = useI18n();
-const { loadProfile } = useProfile();
+// const { t } = useI18n();
+// const { loadProfile } = useProfile();
 const localePath = useLocalePath();
 
 const loading = ref(false);

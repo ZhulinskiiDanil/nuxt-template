@@ -5,8 +5,9 @@
     </p>
     <div :class="$style.list">
       <div
-        tabindex="0"
         v-for="item of list"
+        :key="item.id"
+        tabindex="0"
         :class="$style.item"
         @mousedown="blurElelement"
         @touchstart="blurElelement"

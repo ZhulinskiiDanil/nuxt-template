@@ -14,11 +14,11 @@
 import type { UIKitElementTheme } from '../types';
 import { uiConfig } from '../ui.config';
 
-const model = defineModel();
-const emit = defineEmits<{
+defineEmits<{
   buttonClick: [];
   copy: [text: string];
 }>();
+const model = defineModel<string>();
 const props = defineProps<{
   theme?: UIKitElementTheme;
   wrong?: boolean;

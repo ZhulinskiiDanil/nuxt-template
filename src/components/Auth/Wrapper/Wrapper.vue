@@ -1,15 +1,15 @@
 <template>
   <AuthWrapperLayout
     :class="$style.layout"
-    :footerText="footerText"
-    :footerTextMaxWidth="footerTextMaxWidth"
+    :footer-text="footerText"
+    :footer-text-max-width="footerTextMaxWidth"
     @fn="(...args) => $emit('fn', ...args)"
   >
     <AuthWrapperHead
       :class="$style.head"
-      @backButtonClick="$emit('backButtonClick')"
-      :backButton="backButton"
+      :back-button="backButton"
       :steps="steps"
+      @back-button-click="$emit('backButtonClick')"
     />
     <img
       v-if="logoVisible"
@@ -20,7 +20,7 @@
     <AuthWrapperTitle
       :class="$style.title"
       :title="title"
-      :titleCentered="titleCentered"
+      :title-centered="titleCentered"
       :steps="steps"
     />
     <h3
@@ -35,6 +35,7 @@
     <UITab v-if="tabs" :class="$style.tab" fill>
       <NuxtLink
         v-for="tab of tabs"
+        :key="tab.name"
         style="width: 100%; min-width: min-content"
         :to="localePath(tab.href)"
       >
@@ -61,29 +62,29 @@
       :to="linkedAdditionalButton.href"
     >
       <UIButton
-        @click="$emit('additionalButtonClick')"
         :class="$style.additionalButton"
         uppercase
         fill
+        @click="$emit('additionalButtonClick')"
       >
         {{ linkedAdditionalButton.name }}
       </UIButton>
     </NuxtLink>
     <UIButton
       v-if="additionalButton"
-      @click="$emit('additionalButtonClick')"
       :class="$style.additionalButton"
       uppercase
       fill
+      @click="$emit('additionalButtonClick')"
     >
       {{ additionalButton }}
     </UIButton>
     <UICheckbox
       v-if="checkboxText"
+      v-model="checkbox"
       :title="checkboxText"
       :class="$style.checkbox"
       :disabled="!!checkboxDisabled"
-      v-model="checkbox"
     />
     <template v-if="$slots.footer" #footer>
       <slot name="footer"></slot>
@@ -119,9 +120,8 @@ type Props = {
   AuthWrapperTitleProps &
   AuthWrapperAdditionalsProps;
 
-const slots = defineSlots<{ footer: []; default: [] }>();
-const checkbox = defineModel('checkbox');
-const emit = defineEmits<{
+defineSlots<{ footer(): void; default(): void }>();
+defineEmits<{
   cancel: [];
   submit: [];
   backButtonClick: [];
@@ -129,6 +129,7 @@ const emit = defineEmits<{
   fn: [fnId: string | number];
 }>();
 defineProps<Props>();
+const checkbox = defineModel<boolean>('checkbox');
 
 const localePath = useLocalePath();
 </script>

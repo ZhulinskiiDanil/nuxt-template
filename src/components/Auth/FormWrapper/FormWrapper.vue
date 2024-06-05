@@ -1,8 +1,8 @@
 <template>
   <form
     id="form"
-    @submit.prevent="submit"
     :class="[$style.form, $style[theme]]"
+    @submit.prevent="submit"
   >
     <div v-if="description" :class="$style.description">
       {{ description }}
@@ -11,8 +11,8 @@
       <slot name="default"></slot>
       <NuxtLink data-link :to="submitLink || ''">
         <UIButton
-          fill
           v-if="stepButtonTitle"
+          fill
           :disabled="disabled"
           style="white-space: nowrap"
           type="black"
@@ -26,17 +26,17 @@
       :class="$style.buttons"
     >
       <UIButton
-        fill
         v-if="cancelTitle"
-        @click.stop.prevent="cancel"
+        fill
         type="stroked"
+        @click.stop.prevent="cancel"
       >
         {{ cancelTitle }}
       </UIButton>
       <NuxtLink data-link :to="submitLink || ''">
         <UIButton
-          fill
           v-if="submitTitle"
+          fill
           :disabled="disabled"
           style="white-space: nowrap"
           type="black"
@@ -50,7 +50,7 @@
 
 <script setup lang="ts">
 const emit = defineEmits<{ submit: []; cancel: [] }>();
-const props = withDefaults(
+withDefaults(
   defineProps<{
     cancelTitle?: string;
     submitTitle?: string;
@@ -61,15 +61,15 @@ const props = withDefaults(
     disabled?: boolean;
   }>(),
   {
+    cancelTitle: '',
+    submitTitle: '',
+    submitLink: '',
+    stepButtonTitle: '',
+    description: '',
+    disabled: false,
     isEmpty: false
   }
 );
-
-const legal = ref(false);
-
-function changeLegal(checked: boolean) {
-  legal.value = checked;
-}
 
 const { theme } = useTheme();
 

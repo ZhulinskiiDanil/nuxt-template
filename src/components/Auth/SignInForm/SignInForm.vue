@@ -1,15 +1,15 @@
 <template>
   <AuthFormWrapper
-    @submit="submit"
-    submitTitle="Войти"
+    submit-title="Войти"
     :disabled="
       !v$.login.$model || !v$.password.$model || loading
     "
+    @submit="submit"
   >
     <UIInputWrapper>
       <UIInput
-        placeholder="Введите логин"
         v-model="v$.login.$model"
+        placeholder="Введите логин"
         :error="login.error || v$.login.$errors[0]?.$message"
       />
     </UIInputWrapper>
@@ -20,9 +20,9 @@
       }"
     >
       <UIInput
+        v-model="v$.password.$model"
         type="password"
         placeholder="Введите пароль"
-        v-model="v$.password.$model"
         :error="
           password.error || v$.password.$errors[0]?.$message
         "
@@ -32,18 +32,18 @@
 </template>
 
 <script setup lang="ts">
-import { AuthErrors } from '@/ts/errors/auth';
+// import { AuthErrors } from '@/ts/errors/auth';
 import { useVuelidate } from '@vuelidate/core';
 import { helpers, required } from '@vuelidate/validators';
 
-const getLocaleError = useGetLocaleError();
+// const getLocaleError = useGetLocaleError();
 
-const emit = defineEmits<{
+defineEmits<{
   error: [error: string | null];
 }>();
 
-const { t } = useI18n();
-const { loadProfile } = useProfile();
+// const { t } = useI18n();
+// const { loadProfile } = useProfile();
 const localePath = useLocalePath();
 
 const loading = ref(false);

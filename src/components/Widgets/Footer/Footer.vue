@@ -14,9 +14,9 @@
             </div>
             <ul :class="$style.list">
               <NuxtLink
-                :class="$style.link"
                 v-for="link in linkList.links"
                 :key="$rt(link.href)"
+                :class="$style.link"
                 :to="$rt(link.href)"
               >
                 {{ $rt(link.name) }}

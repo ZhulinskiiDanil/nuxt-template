@@ -1,0 +1,30 @@
+{
+  "$schema": "./local-vite-plugins/watch-folder-snippets-resolver/schema.json",
+  "snippets": [
+    {
+      "prefix": ["vbase"],
+      "tree": [
+        {
+          "name": "{{FOLDER_NAME}}.vue",
+          "body": [
+            "<template>",
+            "\t<div :class=\"$style.container\">",
+            "\t\t{{FOLDER_NAME}}",
+            "\t</div>",
+            "</template>",
+            "",
+            "<script setup lang=\"ts\">",
+            "\t",
+            "</script>",
+            "",
+            "<style lang=\"scss\" src=\"./{{FOLDER_NAME}}.module.scss\" module></style>"
+          ]
+        },
+        {
+          "name": "{{FOLDER_NAME}}.module.scss",
+          "body": [".container {", "}"]
+        }
+      ]
+    }
+  ]
+}

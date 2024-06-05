@@ -1,4 +1,5 @@
 import path from 'path';
+import fsSnippetsResolver from './vite/plugins/fs-snippets-resolver';
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -40,6 +41,7 @@ export default defineNuxtConfig({
     }
   },
   vite: {
+    plugins: [fsSnippetsResolver('folder-snippets.json')],
     resolve: {
       alias: {
         '@': path.resolve(__dirname, './src'),

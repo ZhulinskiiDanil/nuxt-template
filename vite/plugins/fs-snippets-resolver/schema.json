@@ -1,0 +1,48 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "tp_node",
+  "title": "watch-folder-snippets-resolver config schema",
+  "definitions": {
+    "tree": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "default": "$FOLDER_NAME.vue"
+          },
+          "body": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tree": {
+            "$ref": "#/definitions/tree"
+          }
+        }
+      }
+    }
+  },
+  "properties": {
+    "snippets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "prefix": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "tree": {
+            "$ref": "#/definitions/tree"
+          }
+        }
+      }
+    }
+  },
+  "required": ["snippets"]
+}

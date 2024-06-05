@@ -18,8 +18,8 @@ importers:
         specifier: ^3.12.5
         version: 3.12.5
       maska:
-        specifier: 3.0.0-beta1
-        version: 3.0.0-beta1
+        specifier: 2.1.11
+        version: 2.1.11
       nuxi:
         specifier: ^3.11.1
         version: 3.11.1
@@ -3017,8 +3017,8 @@ packages:
     resolution: {integrity: sha512-cKTUFc/rbKUd/9meOvgrpJ2WrNzymt6jfRDdwg5UCnVzv9dTpEj9JS5m3wtziXVCjluIXyL8pcaukYqezIzZQA==}
     engines: {node: ^16.14.0 || >=18.0.0}
 
-  maska@3.0.0-beta1:
-    resolution: {integrity: sha512-A3mwnjRKgCHgGR7higNKPfEXTN0DVvP/pTE3xFboT6qeEVDtrZTI7y+K9s8igKEhK1VF4GHou7kkR+H9Y4Z1dQ==}
+  maska@2.1.11:
+    resolution: {integrity: sha512-IGqWjBnKxMYcVa06pb4mPfag9sJjnR2T15CdGfQ2llR3gajiSd4AxXCvNqHMEq9W3UBhjjTazgWumsP3sWrUSg==}
 
   mdn-data@2.0.28:
     resolution: {integrity: sha512-aylIc7Z9y4yzHYAJNuESG3hfhC+0Ibp/MAMiaOZgNv4pmEdFyfZhhhny4MNiAfWdBQ1RQ2mfDWmM1x8SvGyp8g==}
@@ -8064,7 +8064,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  maska@3.0.0-beta1: {}
+  maska@2.1.11: {}
 
   mdn-data@2.0.28: {}
 
